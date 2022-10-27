@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="login page for the SoMe social media application"
+    />
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <title>Login | SoMe</title>
+  </head>
+  <body class="bg-secondary d-flex flex-column min-vh-100">
+    <header>
+      <nav class="navbar navbar-expand-md shadow bg-light">
+        <div class="container-fluid">
+          <a href="#" class="navbar-brand"
+            ><img
+              src="/assets/images/SoMe.svg"
+              alt="logo of SoMe"
+              class="img-logo"
+          /></a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="login mt-4 mb-2">
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-12 d-flex justify-content-center">
+              <div class="card shadow">
+                <div class="card-body">
+                  <h1 class="card-title">Login</h1>
+                  <form
+                    action="/profile.html"
+                    class="text-start d-flex flex-column align-items-center mt-5"
+                  >
+                    <div class="mb-3 ms-5 me-5">
+                      <label for="email" class="form-label">Email *</label>
+                      <input
+                        type="email"
+                        id="email"
+                        class="form-control"
+                        placeholder="Email@Address.com"
+                        required
+                      />
+                    </div>
+                    <div class="mb-3 ms-6 me-6">
+                      <label for="password" class="form-label"
+                        >Password *</label
+                      >
+                      <input
+                        type="password"
+                        id="password"
+                        class="form-control"
+                        placeholder="********"
+                        required
+                        minlength="8"
+                      />
+                    </div>
+                    <button
+                      class="btn btn-primary mt-4 mb-3 shadow text-uppercase"
+                    >
+                      login
+                    </button>
+                    <div class="card-text mb-5">
+                      Not registered? <a href="#">Create an account</a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-light mt-auto p-2 text-center">
+      <a
+        target="_blank"
+        href="https://joranengelund.github.io/"
+        class="nav-item"
+        >All rights reserved © JayDesign 2022</a
+      >
+    </footer>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
