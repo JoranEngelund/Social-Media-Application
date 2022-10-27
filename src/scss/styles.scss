@@ -44,3 +44,13 @@
 footer a {
   text-decoration: none;
 }
+
+.nav-link {
+  color: $dark;
+
+  &:hover {
+    background-color: $primary;
+    color: $light;
+    box-shadow: $box-shadow;
+  }
+}
