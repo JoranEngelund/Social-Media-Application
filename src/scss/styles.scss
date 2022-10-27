@@ -1,3 +1,46 @@
+// Custom scss
+@import "variables";
+@import "mixins";
+@import "card";
+@import "btn";
+
 // Original Bootstrap scss files
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../../node_modules/bootstrap/scss/functions";
+
+// Custom Font-Family
+@import url("https://use.typekit.net/obt0qwc.css");
+
+// Fonts
+
+:root {
+  --bs-body-font-family: open-sans, sans-serif;
+}
+.img-logo {
+  @include img-media(60%);
+}
+
+.btn:hover {
+  background-color: $secondary;
+  color: $dark;
+}
+
+// Customized form from "../../node_modules/bootstrap/scss/forms/form-control.scss"
+.form-control {
+  width: 17rem;
+  color: $dark;
+  background-color: $secondary;
+  border: none;
+  border-radius: 0.2rem;
+  box-shadow: inset 0 3px 6px rgb(0 0 0 / 16%);
+
+  &:focus {
+    background-color: $secondary;
+    box-shadow: inset 0 3px 6px rgb(0 0 0 / 16%);
+  }
+}
+
+// Footer links
+footer a {
+  text-decoration: none;
+}
