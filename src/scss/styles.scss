@@ -1,9 +1,9 @@
 // Custom scss
-@import "variables";
-@import "mixins";
-@import "card";
-@import "btn";
-@import "nav";
+@import "./partials/variables";
+@import "./partials/mixins";
+@import "./partials/card";
+@import "./partials/btn";
+@import "./partials/nav";
 
 // Original Bootstrap scss files
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
@@ -12,12 +12,14 @@
 // Custom Font-Family
 @import url("https://use.typekit.net/obt0qwc.css");
 
-// Fonts
+// Roots
 
 :root {
   --bs-body-font-family: open-sans, sans-serif;
   --bs-border-width: none;
 }
+
+// Custom img styling
 .img-logo {
   @include img-media(60%);
 }
@@ -66,7 +68,7 @@
   @include font-size(1.5rem);
 }
 
-// Footer links
+// links
 footer a,
 .card a {
   text-decoration: none;
@@ -77,6 +79,8 @@ footer a,
   color: $light;
   box-shadow: $box-shadow;
 }
+
+//Customized _card.scss & custom styling regarding .card class
 
 .card {
   max-width: 30rem;
