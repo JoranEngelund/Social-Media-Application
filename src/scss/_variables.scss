@@ -20,6 +20,9 @@ $spacers: (
   6: $spacer * 6,
   7: $spacer * 7,
   8: $spacer * 8,
+  9: $spacer * 8.5,
+  10: $spacer * 9,
+  11: $spacer * 10,
 );
 
 // Link color
@@ -27,3 +30,5 @@ $link-color: $dark;
 
 // Border-radius
 $border-radius: 0.2rem;
+
+$font-size: 1.5rem;
