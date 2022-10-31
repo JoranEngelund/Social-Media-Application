@@ -13323,7 +13323,8 @@ textarea.form-control-lg {
 }
 
 .form-control {
-  width: 17rem;
+  width: 100%;
+  max-width: 17rem;
   border: none;
   border-radius: 0.2rem;
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.16);
