@@ -55,11 +55,11 @@
   &.search-bar {
     font-size: 1.5rem;
     height: 3rem;
-    width: 13rem;
+    max-width: 13rem;
   }
 
   &.post-input {
-    width: 19rem;
+    max-width: 19rem;
     background-color: $light;
   }
 }
