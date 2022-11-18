@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="home page, share and read other posts in the feed, search on people, posts and contacts on SoMe "
+    />
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.svg" />
+    <link rel="stylesheet" href="/dist/css/styles.css" />
+    <title>Home | SoMe</title>
+  </head>
+  <body class="bg-secondary d-flex flex-column min-vh-100">
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-md shadow bg-light">
+        <div class="container-fluid">
+          <a href="/home.html" class="navbar-brand"
+            ><img
+              src="/assets/images/SoMe.svg"
+              alt="logo of SoMe"
+              class="img-logo"
+          /></a>
+          <button
+            type="button"
+            class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a
+                  href="/home.html"
+                  class="nav-link bg-primary text-light rounded py-1 px-3 mx-2 shadow"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="/profile.html" class="nav-link rounded py-1 px-3 mx-2"
+                  >Profile</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="/index.html" class="nav-link rounded py-1 px-3 mx-2"
+                  >Sign out</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                type="search"
+                class="form-control search-bar ps-4 navbar-dark"
+                placeholder="Search"
+                aria-label="search"
+              />
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div
+              class="col-12 d-flex flex-column justify-content-center align-items-center text-left"
+            >
+              <form action="#">
+                <div class="mb-3">
+                  <h1 class="form-label text-left custom-label mt-5">
+                    Share something
+                  </h1>
+                  <div>
+                    <textarea
+                      id="post"
+                      class="form-control post-input shadow"
+                      placeholder="What do you want to share?"
+                      required
+                      minlength="2"
+                    ></textarea>
+                    <button
+                      type="submit"
+                      class="btn btn-primary mt-4 mb-3 px-10 text-center btn-custom shadow"
+                    >
+                      Post
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div
+              class="col-12 lg-6 d-flex flex-column justify-content-center align-items-center text-left"
+            >
+              <h2 class="custom-label mt-3 mb-3">Feed</h2>
+              <div class="card mb-5 shadow">
+                <div class="d-flex ms-2 mt-3 mb-4">
+                  <img
+                    src="/assets/images/profile-image.png"
+                    alt="profile-picture of user"
+                    class="card-img-top"
+                  />
+                  <h3 class="card-title custom-title ms-3 align-self-center">
+                    Michael Quinn
+                  </h3>
+                </div>
+                <div class="card-body">
+                  <p class="card-text mb-4">
+                    But I must explain to you how all this mistaken idea of
+                    denouncing pleasure and praising pain was born and I will
+                    give you a complete account of the system, and expound the
+                    actual teachings of the great explorer of the truth, the
+                    master-builder of human happiness. No one rejects, dislikes,
+                    or avoids pleasure itself, because it is pleasure, but
+                    because those who do not know how to pursue pleasure
+                    rationally encounter consequences that are extremely
+                    painful.
+                  </p>
+                  <div class="d-flex gap-3 text-decoration-none mb-0">
+                    <p class="card-text custom-text"><a href="#">Like</a></p>
+                    <p class="card-text custom-text"><a href="#">Comment</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col-12 lg-6 d-flex flex-column justify-content-center align-items-center text-left"
+            >
+              <div class="card mb-5 shadow">
+                <div class="d-flex ms-2 mt-3 mb-4">
+                  <img
+                    src="/assets/images/profile-image.png"
+                    alt="profile-picture of user"
+                    class="card-img-top"
+                  />
+                  <h3 class="card-title custom-title ms-3 align-self-center">
+                    Tyler Nguyen
+                  </h3>
+                </div>
+                <div class="card-body">
+                  <p class="card-text mb-4">
+                    But I must explain to you how all this mistaken idea of
+                    denouncing pleasure and praising pain was born and I will
+                    give you a complete account of the system, and expound the
+                    actual teachings of the great explorer of the truth, the
+                    master-builder of human happiness. No one rejects, dislikes,
+                    or avoids pleasure itself, because it is pleasure, but
+                    because those who do not know how to pursue pleasure
+                    rationally encounter consequences that are extremely
+                    painful.
+                  </p>
+                  <div class="d-flex gap-3 text-decoration-none mb-0">
+                    <p class="card-text custom-text"><a href="#">Like</a></p>
+                    <p class="card-text custom-text"><a href="#">Comment</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-light mt-auto p-2 text-center">
+      <a
+        target="_blank"
+        href="https://joranengelund.github.io/"
+        class="nav-item"
+        >All rights reserved © JayDesign 2022</a
+      >
+    </footer>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

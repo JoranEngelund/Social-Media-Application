@@ -1,0 +1,35 @@
+// Colours
+$primary: #003366;
+$secondary: #f5f6f7;
+$light: #ffffff;
+$dark: #000000;
+
+//Shadows
+$box-shadow: 0 3px 6px rgb(0 0 0 / 16%);
+$inset-box-shadow: inset 0 3px 6px rgb(0 0 0 / 16%);
+
+// Spacing
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 2.5,
+  6: $spacer * 3,
+  7: $spacer * 6,
+  8: $spacer * 7,
+  9: $spacer * 8,
+  10: $spacer * 8.5,
+  11: $spacer * 9,
+  12: $spacer * 10,
+);
+
+// Link color
+$link-color: $dark;
+
+// Border-radius
+$border-radius: 0.2rem;
+
+$font-size: 1.5rem;

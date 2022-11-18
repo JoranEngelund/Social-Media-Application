@@ -1,0 +1,107 @@
+// Custom scss
+@import "../../node_modules/bootstrap/scss/functions";
+@import "./partials/variables";
+@import "./partials/mixins";
+@import "./partials/card";
+@import "./partials/btn";
+@import "./partials/nav";
+
+// Original Bootstrap scss files
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+// Custom Font-Family
+@import url("https://use.typekit.net/obt0qwc.css");
+
+// Roots
+
+:root {
+  --bs-body-font-family: open-sans, sans-serif;
+  --bs-border-width: none;
+}
+
+// Custom img styling
+.img-logo {
+  @include img-media(60%);
+}
+
+.form-control,
+.nav-link,
+.btn:hover {
+  color: $dark;
+}
+
+.form-control,
+.btn-login:hover {
+  background-color: $secondary;
+}
+
+.btn-custom:hover {
+  background-color: $light;
+}
+
+// Customized form from "../../node_modules/bootstrap/scss/forms/form-control.scss"
+.form-control {
+  width: 100%;
+  max-width: 17rem;
+  border: none;
+  border-radius: 0.2rem;
+  box-shadow: $inset-box-shadow;
+
+  &:focus {
+    background-color: $secondary;
+    box-shadow: $inset-box-shadow;
+  }
+
+  &.search-bar {
+    font-size: 1.5rem;
+    height: 3rem;
+    max-width: 13rem;
+  }
+
+  &.post-input {
+    max-width: 19rem;
+    background-color: $light;
+  }
+}
+
+// Customized h1 styling from "../../node_modules/bootstrap/scss/_reboot.scss" line 93
+.custom-label {
+  @include font-size(1.5rem);
+}
+
+// links
+footer a,
+.card a {
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: $primary;
+  color: $light;
+  box-shadow: $box-shadow;
+}
+
+//Customized _card.scss & custom styling regarding .card class
+
+.card {
+  max-width: 30rem;
+}
+
+.custom-text:hover {
+  text-decoration: underline;
+}
+
+.custom-title {
+  @include font-size(1.3rem);
+}
+
+.card h2 {
+  @include font-size(1.6rem);
+}
+
+.card-img-top,
+.card-img-bottom {
+  max-width: 15%;
+  height: auto;
+  border-radius: 50%;
+}

@@ -1,0 +1,4 @@
+@mixin img-media($width) {
+  max-width: $width;
+  height: auto;
+}
