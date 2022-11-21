@@ -42,9 +42,13 @@
                       <input
                         type="email"
                         id="email"
+                        name="email"
                         class="form-control"
-                        placeholder="Email@Address.com"
+                        placeholder="Email.address@noroff.no"
                         required
+                        pattern="^[\w\-.]+@(stud.)?noroff.no$"
+                        title="Email address must contain @(stud.)noroff.no | 
+                        Example: your.address@stud.noroff.no"
                       />
                     </div>
                     <div class="mb-3 mx-6">
@@ -54,6 +58,7 @@
                       <input
                         type="password"
                         id="password"
+                        name="password"
                         class="form-control"
                         placeholder="********"
                         required
@@ -68,7 +73,7 @@
                     </button>
                     <div class="card-text mb-5">
                       Not registered?
-                      <a class="text-decoration-underline" href="#"
+                      <a class="text-decoration-underline" href="register.html"
                         >Create an account</a
                       >
                     </div>
