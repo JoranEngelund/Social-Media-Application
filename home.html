@@ -78,13 +78,45 @@
                     Share something
                   </h1>
                   <div>
+                    <div class="mb-3 mt-4">
+                      <label for="title" class="form-label">Title *</label>
+                      <textarea
+                        name="title"
+                        id="title"
+                        class="form-control post-input shadow"
+                        placeholder="Title"
+                        maxlength="280"
+                        required
+                      ></textarea>
+                    </div>
+                    <label for="post" class="form-label">Body</label>
                     <textarea
+                      name="body"
                       id="post"
-                      class="form-control post-input shadow"
+                      class="form-control post-input shadow mb-3"
                       placeholder="What do you want to share?"
-                      required
-                      minlength="2"
                     ></textarea>
+                    <div class="mb-3">
+                      <label for="tags" class="form-label">Tags</label>
+                      <input
+                        name="tags"
+                        type="text"
+                        id="tags"
+                        class="form-control post-input shadow"
+                        placeholder="First tag, second tag, ..."
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="media" class="form-label">Media</label>
+                      <input
+                        name="media"
+                        type="url"
+                        id="media"
+                        class="form-control post-input shadow"
+                        placeholder="Media must be a URL"
+                        title="media must be a fully formed URL that links to a live and publicly accessible image."
+                      />
+                    </div>
                     <button
                       type="submit"
                       class="btn btn-primary mt-4 mb-3 px-10 text-center btn-custom shadow"
