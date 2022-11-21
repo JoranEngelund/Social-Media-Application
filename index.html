@@ -40,11 +40,14 @@
                     <div class="mb-3 mx-6">
                       <label for="email" class="form-label">Email *</label>
                       <input
+                        name="email"
                         type="email"
                         id="email"
                         class="form-control"
                         placeholder="Email@Address.com"
+                        pattern="^[\w\-.]+@(stud.)?noroff.no$"
                         required
+                        title="Cannot contain (Æ, Ø, Å) | Example: your_address@noroff.no / your-address@stud.noroff.no"
                       />
                     </div>
                     <div class="mb-3 mx-6">
@@ -54,6 +57,7 @@
                       <input
                         type="password"
                         id="password"
+                        name="password"
                         class="form-control"
                         placeholder="********"
                         required
@@ -68,7 +72,9 @@
                     </button>
                     <div class="card-text mb-5">
                       Not registered?
-                      <a class="text-decoration-underline" href="#"
+                      <a
+                        class="text-decoration-underline"
+                        href="registration.html"
                         >Create an account</a
                       >
                     </div>
