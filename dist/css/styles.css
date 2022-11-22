@@ -13389,11 +13389,15 @@ footer a,
   }
 }
 
-.card-img-top,
-.card-img-bottom {
+.card-img-top {
   max-width: 15%;
   height: auto;
   border-radius: 50%;
+}
+
+.card-img-bottom {
+  max-width: 40%;
+  height: auto;
 }
 
 /*# sourceMappingURL=styles.css.map */
