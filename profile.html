@@ -77,6 +77,18 @@
               />
               <h1 class="ms-5 align-self-center">Casey Reeves</h1>
             </div>
+            <div class="mb-3">
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#updateProfileModal"
+                class="btn btn-light shadow me-1 px-4 mb-2"
+              >
+                Edit Profile
+              </button>
+              <button class="btn btn-primary shadow px-7 mb-2 btn-custom">
+                Follow
+              </button>
+            </div>
           </div>
         </div>
       </section>
@@ -100,84 +112,84 @@
                     <img
                       src="/assets/images/profile-image.png"
                       alt="profile-picture of user"
-                      class="card-img-bottom m-1"
+                      class="card-img-top m-1"
                     />
                   </a>
                   <a href="#">
                     <img
                       src="/assets/images/profile-image.png"
                       alt="profile-picture of user"
-                      class="card-img-bottom m-1"
+                      class="card-img-top m-1"
                     />
                   </a>
                   <a href="#">
                     <img
                       src="/assets/images/profile-image.png"
                       alt="profile-picture of user"
-                      class="card-img-bottom m-1"
+                      class="card-img-top m-1"
                     />
                   </a>
                   <a href="#">
                     <img
                       src="/assets/images/profile-image.png"
                       alt="profile-picture of user"
-                      class="card-img-bottom m-1"
+                      class="card-img-top m-1"
                     />
                   </a>
                   <a href="#">
                     <img
                       src="/assets/images/profile-image.png"
                       alt="profile-picture of user"
-                      class="card-img-bottom m-1"
+                      class="card-img-top m-1"
                     />
                   </a>
                   <a href="#">
                     <img
                       src="/assets/images/profile-image.png"
                       alt="profile-picture of user"
-                      class="card-img-bottom m-1"
+                      class="card-img-top m-1"
                     />
                   </a>
                   <a href="#">
                     <img
                       src="/assets/images/profile-image.png"
                       alt="profile-picture of user"
-                      class="card-img-bottom m-1"
+                      class="card-img-top m-1"
                     />
                   </a>
                   <a href="#">
                     <img
                       src="/assets/images/profile-image.png"
                       alt="profile-picture of user"
-                      class="card-img-bottom m-1"
+                      class="card-img-top m-1"
                     />
                   </a>
                   <a href="#">
                     <img
                       src="/assets/images/profile-image.png"
                       alt="profile-picture of user"
-                      class="card-img-bottom m-1"
+                      class="card-img-top m-1"
                     />
                   </a>
                   <a href="#">
                     <img
                       src="/assets/images/profile-image.png"
                       alt="profile-picture of user"
-                      class="card-img-bottom m-1"
+                      class="card-img-top m-1"
                     />
                   </a>
                   <a href="#">
                     <img
                       src="/assets/images/profile-image.png"
                       alt="profile-picture of user"
-                      class="card-img-bottom m-1"
+                      class="card-img-top m-1"
                     />
                   </a>
                   <a href="#">
                     <img
                       src="/assets/images/profile-image.png"
                       alt="profile-picture of user"
-                      class="card-img-bottom m-1"
+                      class="card-img-top m-1"
                     />
                   </a>
                 </div>
@@ -270,14 +282,17 @@
                       <p class="card-text custom-text">
                         <a href="#">Comment</a>
                       </p>
+                      <p class="card-text custom-text">
+                        <a href="post-specific.html">View Post</a>
+                      </p>
                     </div>
-                    <div class="d-flex gap-3 text-decoration-none mb-0">
+                    <div class="d-flex gap-3 text-decoration-none ms-2 mb-0">
                       <p class="card-text custom-text">
                         <a
                           href="#"
                           data-bs-toggle="modal"
                           data-bs-target="#updatePostModal"
-                          >Update</a
+                          >Edit</a
                         >
                       </p>
                       <p class="card-text custom-text">
@@ -316,14 +331,17 @@
                       <p class="card-text custom-text">
                         <a href="#">Comment</a>
                       </p>
+                      <p class="card-text custom-text">
+                        <a href="post-specific.html">View Post</a>
+                      </p>
                     </div>
-                    <div class="d-flex gap-3 text-decoration-none mb-0">
+                    <div class="d-flex gap-3 text-decoration-none ms-2 mb-0">
                       <p class="card-text custom-text">
                         <a
                           href="#"
                           data-bs-toggle="modal"
                           data-bs-target="#updatePostModal"
-                          >Update</a
+                          >Edit</a
                         >
                       </p>
                       <p class="card-text custom-text">
@@ -332,6 +350,71 @@
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="updateProfile">
+        <div
+          class="modal fade"
+          id="updateProfileModal"
+          tabindex="-1"
+          aria-labelledby="updateProfileModal"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content bg-secondary">
+              <div class="d-flex mx-3 mt-3 d-flex justify-content-end">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body d-flex justify-content-center">
+                <form action="#">
+                  <div class="mb-3">
+                    <h2 class="form-label text-left custom-label mb-5">
+                      Update Profile Media
+                    </h2>
+                    <div>
+                      <div class="mb-3">
+                        <label for="update-media" class="form-label"
+                          >Avatar</label
+                        >
+                        <input
+                          name="avatar"
+                          type="url"
+                          id="update-avatar"
+                          class="form-control post-input shadow"
+                          placeholder="Avatar must be a URL"
+                          title="Avatar must be a fully formed URL that links to a live and publicly accessible image."
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="update-media" class="form-label"
+                          >Banner</label
+                        >
+                        <input
+                          name="banner"
+                          type="url"
+                          id="update-banner"
+                          class="form-control post-input shadow"
+                          placeholder="Banner must be a URL"
+                          title="banner must be a fully formed URL that links to a live and publicly accessible image."
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    type="submit"
+                    class="btn btn-primary mt-4 mb-3 mx-3 px-6 text-center btn-custom shadow"
+                  >
+                    Save changes
+                  </button>
+                </form>
               </div>
             </div>
           </div>
