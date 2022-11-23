@@ -99,9 +99,26 @@ footer a,
   @include font-size(1.6rem);
 }
 
-.card-img-top,
-.card-img-bottom {
+.card-img-top {
   max-width: 15%;
   height: auto;
   border-radius: 50%;
+}
+
+.card-img-bottom {
+  max-width: 40%;
+  height: auto;
+}
+
+.post-time {
+  margin-bottom: -1.7rem;
+}
+
+#collapseComment {
+  border-top: 1px solid grey;
+}
+
+.comment {
+  padding: 1rem;
+  border-radius: 6px;
 }
