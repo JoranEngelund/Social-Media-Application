@@ -13404,4 +13404,13 @@ footer a,
   margin-bottom: -1.7rem;
 }
 
+#collapseComment {
+  border-top: 1px solid grey;
+}
+
+.comment {
+  padding: 1rem;
+  border-radius: 6px;
+}
+
 /*# sourceMappingURL=styles.css.map */
