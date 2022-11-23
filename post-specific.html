@@ -74,10 +74,11 @@
                     class="card-img-top"
                   />
                   <h3 class="card-title custom-title ms-3 align-self-center">
-                    Michael Quinn
+                    <a href="profile.html">Michael Quinn</a>
                   </h3>
                 </div>
                 <div class="card-body">
+                  <h4 class="card-title mb-3">This is a title for the post</h4>
                   <p class="card-text mb-4">
                     But I must explain to you how all this mistaken idea of
                     denouncing pleasure and praising pain was born and I will
@@ -89,11 +90,26 @@
                     rationally encounter consequences that are extremely
                     painful.
                   </p>
+                  <img
+                    src="/assets/images/279036893_10158362550777032_8021443828468629015_n.jpg"
+                    alt=""
+                    class="card-img-bottom mb-4 align-items-center"
+                  />
                   <div class="d-flex justify-content-between">
                     <div class="d-flex gap-3 text-decoration-none mb-0">
                       <p class="card-text custom-text"><a href="#">Like</a></p>
                       <p class="card-text custom-text">
-                        <a href="#">Comment</a>
+                        <a
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseComment"
+                          aria-expanded="true"
+                          aria-controls="collapseComment"
+                          href="collapseComment"
+                          >Comment</a
+                        >
+                      </p>
+                      <p class="card-text custom-text">
+                        <a href="post-specific.html">View Post</a>
                       </p>
                     </div>
                     <div class="d-flex gap-3 text-decoration-none ms-2 mb-0">
@@ -108,6 +124,52 @@
                       <p class="card-text custom-text">
                         <a href="#">Delete</a>
                       </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="collapse" id="collapseComment">
+                  <div class="card card-body mt-2">
+                    <form action="#">
+                      <div class="mb-3">
+                        <div>
+                          <img
+                            src="/assets/images/profile-image.png"
+                            alt="profile-picture of user"
+                            class="card-img-top"
+                          />
+                        </div>
+                        <div class="d-flex flex-row justify-content-center">
+                          <textarea
+                            name="body"
+                            id="comment"
+                            class="form-control post-input shadow mb-3 me-2"
+                            placeholder="What do you want to comment?"
+                          ></textarea>
+                          <button
+                            type="submit"
+                            class="btn btn-primary mt-4 mb-3 text-center btn-custom shadow"
+                          >
+                            Comment
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                    <div class="card-text">
+                      <div>
+                        <img
+                          src="/assets/images/profile-image.png"
+                          alt="profile-picture of user"
+                          class="card-img-top"
+                        />
+                      </div>
+                      <div class="d-flex flex-row ms-2">
+                        <p class="comment bg-secondary shadow">
+                          But I must explain to you how all this mistaken idea
+                          of denouncing pleasure and praising pain was born and
+                          I will give you a complete account of the system, and
+                          expound the actual teachings
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
