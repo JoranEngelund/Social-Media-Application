@@ -145,7 +145,6 @@
                   Sort by date
                 </button>
               </div>
-
               <div class="card mb-5 shadow">
                 <p class="post-time me-2 mt-2 text-end">22.11.2022</p>
                 <div class="d-flex mt-2 ms-2 mb-4">
@@ -180,7 +179,14 @@
                     <div class="d-flex gap-3 text-decoration-none mb-0">
                       <p class="card-text custom-text"><a href="#">Like</a></p>
                       <p class="card-text custom-text">
-                        <a href="#">Comment</a>
+                        <a
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseComment"
+                          aria-expanded="true"
+                          aria-controls="collapseComment"
+                          href="collapseComment"
+                          >Comment</a
+                        >
                       </p>
                       <p class="card-text custom-text">
                         <a href="post-specific.html">View Post</a>
@@ -198,6 +204,52 @@
                       <p class="card-text custom-text">
                         <a href="#">Delete</a>
                       </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="collapse" id="collapseComment">
+                  <div class="card card-body mt-2">
+                    <form action="#">
+                      <div class="mb-3">
+                        <div>
+                          <img
+                            src="/assets/images/profile-image.png"
+                            alt="profile-picture of user"
+                            class="card-img-top"
+                          />
+                        </div>
+                        <div class="d-flex flex-row justify-content-center">
+                          <textarea
+                            name="body"
+                            id="comment"
+                            class="form-control post-input shadow mb-3 me-2"
+                            placeholder="What do you want to comment?"
+                          ></textarea>
+                          <button
+                            type="submit"
+                            class="btn btn-primary mt-4 mb-3 text-center btn-custom shadow"
+                          >
+                            Comment
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                    <div class="card-text">
+                      <div>
+                        <img
+                          src="/assets/images/profile-image.png"
+                          alt="profile-picture of user"
+                          class="card-img-top"
+                        />
+                      </div>
+                      <div class="d-flex flex-row ms-2">
+                        <p class="comment bg-secondary shadow">
+                          But I must explain to you how all this mistaken idea
+                          of denouncing pleasure and praising pain was born and
+                          I will give you a complete account of the system, and
+                          expound the actual teachings
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
