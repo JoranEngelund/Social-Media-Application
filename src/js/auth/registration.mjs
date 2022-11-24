@@ -15,13 +15,13 @@ export function registerUser() {
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const form = event.target;
-    const method = form.method;
-    const email = form.email.value;
-    const name = form.name.value;
-    const password = form.password.value;
-    const banner = form.banner.value;
-    const avatar = form.avatar.value;
+    const formData = event.target;
+    const method = formData.method;
+    const email = formData.email.value;
+    const name = formData.name.value;
+    const password = formData.password.value;
+    const banner = formData.banner.value;
+    const avatar = formData.avatar.value;
     const profile = {
       name: name,
       email: email,
@@ -29,6 +29,7 @@ export function registerUser() {
       banner: banner,
       avatar: avatar,
     };
+    console.log(profile);
     register(API_REG_URL, profile, method);
     console.log(register);
   });
