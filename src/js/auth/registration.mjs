@@ -11,7 +11,6 @@ import { register } from "../handlers/register.mjs";
  */
 export function registerUser() {
   const form = document.querySelector("#reg-form");
-  console.log(form);
 
   form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -29,8 +28,6 @@ export function registerUser() {
       banner: banner,
       avatar: avatar,
     };
-    console.log(profile);
     register(API_REG_URL, profile, method);
-    console.log(register);
   });
 }
