@@ -26,6 +26,17 @@ export function registrationError(response) {
                                   `;
   } else if (response.ok) {
     const registerCard = document.querySelector("#register-card");
-    window.location.replace("index.html");
+    registerCard.innerHTML = "";
+    registerCard.innerHTML = `<h1 class="card-title mt-3 mb-4">Success!</h1>
+                                  <p class="card-text mb-2">
+                                    Your account has been created
+                                  </p>
+                                  <p class="card-text mb-3">
+                                    Please proceed to the login section
+                                  </p>
+                                  <a href="./index.html"
+                                    class="btn btn-primary mt-4 mb-3 px-8 shadow text-uppercase btn-login">
+                                    login
+                                  </a>`;
   }
 }
