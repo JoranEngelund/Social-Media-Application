@@ -22,10 +22,8 @@ export async function register(url, profile, method) {
       },
       body: JSON.stringify(profile),
     });
-    console.log(response);
     const json = await response.json();
     registrationError(response);
-    console.log(json);
   } catch (error) {
     console.log(error);
   }
