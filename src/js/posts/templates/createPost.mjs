@@ -11,7 +11,6 @@ export function createPosts(
   comments
 ) {
   let commentsHtml = "";
-
   comments.forEach(({ body: commentBody, owner }) => {
     commentsHtml += `<div class="comment-text card-text">
                       <div>
@@ -26,12 +25,20 @@ export function createPosts(
                       </div>
                     </div>`;
   });
+
+  let profileImage = avatar;
+  if (profileImage === null || profileImage === "") {
+    profileImage = "/assets/images/profile-image.png";
+  } else {
+    profileImage = avatar;
+  }
+
   const postContainer = document.querySelector("#post-container");
   postContainer.innerHTML += `<div class="card mb-5 shadow">
                 <p class="post-time me-2 mt-2 text-end">${created} </p>
                 <div class="d-flex mt-2 ms-2 mb-4">
                   <img
-                    src="${avatar}"
+                    src="${profileImage}"
                     alt="profile-picture of user"
                     class="card-img-top"
                   />
