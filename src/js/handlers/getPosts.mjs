@@ -13,9 +13,9 @@ export async function getPosts(url) {
         Authorization: `Bearer ${token}`,
       },
     });
-    const json = await response.json();
+    const posts = await response.json();
     //console.log(json);
-    json.forEach(
+    posts.forEach(
       ({
         title,
         created,
@@ -28,28 +28,18 @@ export async function getPosts(url) {
         comments,
       }) => {
         const { name, avatar } = author;
-
-        /*Display comments below*/
-        const [...allComments] = comments;
-        //console.log(allComments);
-        allComments.forEach(({ ...comment }) => {
-          const { body: commentBody, owner, postId: commentId } = comment;
-          //const postContainer = document.querySelector("#post-container");
-          createPosts(
-            title,
-            created,
-            id,
-            media,
-            updated,
-            body,
-            tags,
-            name,
-            avatar,
-            owner,
-            commentBody,
-            commentId
-          );
-        });
+        createPosts(
+          title,
+          created,
+          id,
+          media,
+          updated,
+          body,
+          tags,
+          name,
+          avatar,
+          comments
+        );
       }
     );
   } catch (error) {
