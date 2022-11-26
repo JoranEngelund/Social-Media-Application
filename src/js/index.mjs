@@ -2,6 +2,7 @@
 
 import { registerUser } from "./auth/registration.mjs";
 import { loginUser } from "./auth/login.mjs";
+import { displayPosts } from "./posts/getPosts.mjs";
 
 const path = window.location.pathname;
 console.log(path);
@@ -12,3 +13,4 @@ if (path === "/index.html") {
   registerUser();
 }
 
+displayPosts();
