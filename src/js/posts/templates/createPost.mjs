@@ -8,10 +8,24 @@ export function createPosts(
   tags,
   name,
   avatar,
-  owner,
-  commentBody,
-  commentId
+  comments
 ) {
+  let commentsHtml = "";
+
+  comments.forEach(({ body: commentBody, owner }) => {
+    commentsHtml += `<div class="comment-text card-text">
+                      <div>
+                        <h3 class="card-title custom-title ms-3 align-self-center">
+                          ${owner}
+                        </h3>
+                      </div>
+                      <div class="d-flex flex-row ms-5">
+                        <p class="comment bg-secondary shadow">
+                          ${commentBody}
+                        </p>
+                      </div>
+                    </div>`;
+  });
   const postContainer = document.querySelector("#post-container");
   postContainer.innerHTML += `<div class="card mb-5 shadow">
                 <p class="post-time me-2 mt-2 text-end">${created} </p>
@@ -94,18 +108,7 @@ export function createPosts(
                         </div>
                       </div>
                     </form>
-                    <div class="comment-text id="${commentId}" card-text">
-                      <div>
-                        <h3 class="card-title custom-title ms-3 align-self-center">
-                          ${owner}
-                        </h3>
-                      </div>
-                      <div class="d-flex flex-row ms-5">
-                        <p class="comment bg-secondary shadow">
-                          ${commentBody}
-                        </p>
-                      </div>
-                    </div>
+                    ${commentsHtml}
                   </div>
                 </div>
               </div>`;
