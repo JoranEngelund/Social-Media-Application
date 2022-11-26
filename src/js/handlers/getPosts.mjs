@@ -14,7 +14,7 @@ export async function getPosts(url) {
       },
     });
     const posts = await response.json();
-    //console.log(json);
+    console.log(posts);
     posts.forEach(
       ({
         title,
