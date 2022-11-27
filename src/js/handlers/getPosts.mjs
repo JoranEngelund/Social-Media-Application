@@ -16,7 +16,6 @@ import * as check from "../error-messages/allPosts-error.mjs";
 export async function getPosts(url) {
   try {
     const token = storage.load("accessToken");
-
     const response = await fetch(url, {
       method: "GET",
       headers: {
