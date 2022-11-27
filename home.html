@@ -72,7 +72,8 @@
             <div
               class="col-12 d-flex flex-column justify-content-center align-items-center text-left"
             >
-              <form action="#" id="#sendPost">
+              <p id="form-error" class="d-none card-text text-center mt-5"></p>
+              <form method="POST" id="send-post">
                 <div class="mb-3">
                   <h1 class="form-label text-left custom-label mt-5">
                     Share something
@@ -104,6 +105,8 @@
                         id="tags"
                         class="form-control post-input shadow"
                         placeholder="First tag, second tag, ..."
+                        pattern="^[a-zA-Z]+(,[a-zA-Z]+)*$"
+                        title="Tags need to be separated with comma ( , ) - Space is not allowed | Example: Tag1,Tag2,Tag3"
                       />
                     </div>
                     <div class="mb-3">
