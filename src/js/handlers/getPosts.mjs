@@ -1,6 +1,6 @@
 import * as storage from "../storage/index.mjs";
 import { createPosts } from "../posts/templates/createPost.mjs";
-//import { createComment } from "../posts/templates/createPost.mjs";
+import * as check from "../error-messages/allPosts-error.mjs";
 
 /**
  * // Async function that sends get request with authorization token to retrieve all posts from API server
@@ -16,7 +16,7 @@ import { createPosts } from "../posts/templates/createPost.mjs";
 export async function getPosts(url) {
   try {
     const token = storage.load("accessToken");
-    console.log(token);
+
     const response = await fetch(url, {
       method: "GET",
       headers: {
@@ -25,7 +25,7 @@ export async function getPosts(url) {
       },
     });
     const posts = await response.json();
-    console.log(posts);
+    check.responseError(response);
     posts.forEach(
       ({
         title,
@@ -60,6 +60,6 @@ export async function getPosts(url) {
       }
     );
   } catch (error) {
-    console.log(error);
+    check.allPostsError(error);
   }
 }
