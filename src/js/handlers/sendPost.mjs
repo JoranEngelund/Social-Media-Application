@@ -20,7 +20,7 @@ export async function forwardPost(url, post, method) {
         "Content-Type": "application/json; charset=UTF-8",
         Authorization: `Bearer ${token}`,
       },
-      body: post,
+      body: JSON.stringify(post),
     });
     console.log(response);
     check.submitPostError(response);
