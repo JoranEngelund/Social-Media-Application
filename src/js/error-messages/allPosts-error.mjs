@@ -4,6 +4,12 @@
  * @example
  * ```
  * // Call the function and pass in the the response object from a fetch call
+ * responseError(response);
+ * ```
+ */
+export function responseError(response) {
+  if (!response.ok) {
+    const postContainer = document.querySelector("#post-container");
     postContainer.innerHTML = "";
     postContainer.innerHTML = `<h2 class="custom-label mt-3">Feed</h2>
                                   <p class="card-text mb-4">
