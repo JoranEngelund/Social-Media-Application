@@ -1,3 +1,24 @@
+/**
+ * // createPosts function that generates and displays dynamic generated html to render posts
+ * @param {string} title // Title of post
+ * @param {*} created // Date when post was created
+ * @param {number} id // id of post
+ * @param {string} media // url of media sent with post
+ * @param {number} updated // Date when post was updated
+ * @param {string} body // body text for posts
+ * @param {*} tags // Array of tags from post
+ * @param {string} name // Name of owner who posted
+ * @param {string} avatar // url of avatar for owner of post
+ * @param {object} comments // Array of object with all comments for the post
+ * @param {number} commentCount // number of comments on post
+ * @param {number} reactionCount // number of reactions on post
+ * @param {object} reactions // array of object with all reactions for the post
+ * @example
+ * ```js
+ * // call the function and pass in the arguments you want to use
+ * createPosts(title, created, id, media, updated, body, tags, name, avatar, comments, commentCount, reactionCount, reactions)
+ * ```
+ */
 export function createPosts(
   title,
   created,
@@ -8,22 +29,42 @@ export function createPosts(
   tags,
   name,
   avatar,
-  comments
+  comments,
+  commentCount,
+  reactionCount,
+  reactions
 ) {
   let commentsHtml = "";
-  comments.forEach(({ body: commentBody, owner }) => {
-    commentsHtml += `<div class="comment-text card-text">
-                      <div>
-                        <h3 class="card-title custom-title ms-3 align-self-center">
-                          ${owner}
-                        </h3>
-                      </div>
+  comments.forEach(({ body: commentBody, owner, author: commentsOwner }) => {
+    const { avatar: ownerAvatar } = commentsOwner;
+    let ownerImage = ownerAvatar;
+    if (ownerImage === null || ownerImage === "") {
+      ownerImage = "/assets/images/profile-image.png";
+    } else {
+      ownerImage = ownerAvatar;
+    }
+    commentsHtml += `<div class="card-text">
+                     <div class="d-flex mt-2 ms-2 mb-2">
+                  <img
+                    src="${ownerImage}"
+                    alt="profile-picture of user"
+                    class="card-img-top"
+                  />
+                  <h3 class="card-title custom-title ms-3 align-self-center">
+                    <a href="/profile-specific.html?name=${owner}">${owner}</a>
+                  </h3>
+                </div>
                       <div class="d-flex flex-row ms-5">
                         <p class="comment bg-secondary shadow">
                           ${commentBody}
                         </p>
                       </div>
                     </div>`;
+  });
+
+  let reactionHtml = "";
+  reactions.forEach(({ symbol, count }) => {
+    reactionHtml += `<p class="card-text">${symbol}(${count})</p>`;
   });
 
   let profileImage = avatar;
@@ -58,7 +99,15 @@ export function createPosts(
                   />
                   <div class="d-flex justify-content-between">
                     <div class="d-flex gap-3 text-decoration-none mb-0">
-                      <p class="card-text custom-text"><a class="me-2" href="#">Likes</a></p>
+                      <p class="card-text custom-text">
+                      <a
+                          data-bs-toggle="collapse"
+                          data-bs-target="#collapseReaction${id}"
+                          aria-expanded="true"
+                          aria-controls="collapseReaction${id}"
+                          href="collapseReaction${id}" 
+                         class="me-2" href="#">Likes (${reactionCount})</a>
+                      </p>
                       <p class="card-text custom-text">
                         <a
                           data-bs-toggle="collapse"
@@ -66,7 +115,7 @@ export function createPosts(
                           aria-expanded="true"
                           aria-controls="collapseComment${id}"
                           href="collapseComment${id}"
-                          >Comment</a
+                          >Comments (${commentCount})</a
                         >
                       </p>
                       <p class="card-text custom-text">
@@ -88,9 +137,14 @@ export function createPosts(
                     </div>
                   </div>
                 </div>
+                <div class="collapse collapse-comment" id="collapseReaction${id}">
+                  <div class="card card-body mt-2 d-flex flex-row">
+                    ${reactionHtml}
+                  </div>
+                </div>
                 <div class="collapse collapse-comment" id="collapseComment${id}">
                   <div class="card card-body mt-2">
-                    <form action="#">
+                    <form action="#" id="${id}">
                       <div class="mb-3">
                         <div>
                           <img
