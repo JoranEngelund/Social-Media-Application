@@ -3,6 +3,7 @@
 import { registerUser } from "./auth/registration.mjs";
 import { loginUser } from "./auth/login.mjs";
 import { displayPosts } from "./posts/getPosts.mjs";
+import { sendPost } from "./posts/submitPost.mjs";
 
 const path = window.location.pathname;
 console.log(path);
@@ -14,3 +15,4 @@ if (path === "/index.html") {
 }
 
 displayPosts();
+sendPost();
