@@ -12,7 +12,7 @@ if (path === "/index.html") {
   loginUser();
 } else if (path === "/registration.html") {
   registerUser();
+} else if (path === "/home.html") {
+  displayPosts();
+  sendPost();
 }
-
-displayPosts();
-sendPost();
