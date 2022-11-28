@@ -72,7 +72,8 @@
             <div
               class="col-12 d-flex flex-column justify-content-center align-items-center text-left"
             >
-              <form action="#">
+              <p id="form-error" class="d-none card-text text-center mt-5"></p>
+              <form method="POST" id="send-post">
                 <div class="mb-3">
                   <h1 class="form-label text-left custom-label mt-5">
                     Share something
@@ -104,6 +105,8 @@
                         id="tags"
                         class="form-control post-input shadow"
                         placeholder="First tag, second tag, ..."
+                        pattern="^[a-zA-Z]+(,[a-zA-Z]+)*$"
+                        title="Tags need to be separated with comma ( , ) - Space is not allowed | Example: Tag1,Tag2,Tag3"
                       />
                     </div>
                     <div class="mb-3">
@@ -130,10 +133,11 @@
           </div>
         </div>
       </section>
-      <section>
+      <section id="feed-container">
         <div class="container">
           <div class="row justify-content-center">
             <div
+              id="post-container"
               class="col-12 lg-6 d-flex flex-column justify-content-center align-items-center text-left"
             >
               <h2 class="custom-label mt-3">Feed</h2>
@@ -255,60 +259,6 @@
                 </div>
               </div>
             </div>
-            <div
-              class="col-12 lg-6 d-flex flex-column justify-content-center align-items-center text-left"
-            >
-              <div class="card mb-5 shadow">
-                <p class="post-time me-2 mt-2 text-end">22.11.2022</p>
-                <div class="d-flex mt-2 ms-2 mb-4">
-                  <img
-                    src="/assets/images/profile-image.png"
-                    alt="profile-picture of user"
-                    class="card-img-top"
-                  />
-                  <h3 class="card-title custom-title ms-3 align-self-center">
-                    Tyler Nguyen
-                  </h3>
-                </div>
-                <div class="card-body">
-                  <p class="card-text mb-4">
-                    But I must explain to you how all this mistaken idea of
-                    denouncing pleasure and praising pain was born and I will
-                    give you a complete account of the system, and expound the
-                    actual teachings of the great explorer of the truth, the
-                    master-builder of human happiness. No one rejects, dislikes,
-                    or avoids pleasure itself, because it is pleasure, but
-                    because those who do not know how to pursue pleasure
-                    rationally encounter consequences that are extremely
-                    painful.
-                  </p>
-                  <div class="d-flex justify-content-between">
-                    <div class="d-flex gap-3 text-decoration-none mb-0">
-                      <p class="card-text custom-text"><a href="#">Like</a></p>
-                      <p class="card-text custom-text">
-                        <a href="#">Comment</a>
-                      </p>
-                      <p class="card-text custom-text">
-                        <a href="post-specific.html">View Post</a>
-                      </p>
-                    </div>
-                    <div class="d-flex gap-3 text-decoration-none ms-2 mb-0">
-                      <p class="card-text custom-text">
-                        <a
-                          href="#"
-                          data-bs-toggle="modal"
-                          data-bs-target="#updatePostModal"
-                          >Edit</a
-                        >
-                      </p>
-                      <p class="card-text custom-text">
-                        <a href="#">Delete</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -404,5 +354,6 @@
       >
     </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/src/js/index.mjs" type="module"></script>
   </body>
 </html>
