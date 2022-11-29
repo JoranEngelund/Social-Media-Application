@@ -60,5 +60,3 @@ export async function getSpecificPost(url) {
     console.log(error);
   }
 }
-
-getSpecificPost();
