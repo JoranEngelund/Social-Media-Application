@@ -28,11 +28,11 @@
   },
   "homepage": "https://github.com/JoranEngelund/css-frameworks-ca#readme",
   "dependencies": {
-    "bootstrap": "^5.2.2",
+    "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.9.1"
   },
   "devDependencies": {
     "live-server": "^1.2.2",
-    "sass": "^1.55.0"
+    "sass": "^1.56.1"
   }
 }

@@ -119,7 +119,7 @@ export function createPosts(
                           >Comments (${commentCount})</a
                         >
                       </p>
-                      <p class="card-text custom-text">
+                      <p class="card-text custom-text view-post">
                         <a href="post-specific.html?id=${id}">View Post</a>
                       </p>
                     </div>
