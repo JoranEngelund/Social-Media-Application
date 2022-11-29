@@ -1,6 +1,7 @@
 import * as storage from "../storage/index.mjs";
 import { createPosts } from "../posts/templates/createPost.mjs";
 import * as check from "../error-messages/allPosts-error.mjs";
+import { getForm } from "../posts/comment.mjs";
 
 /**
  * // Async function that sends get request with authorization token to retrieve all posts from API server
@@ -58,6 +59,8 @@ export async function getPosts(url) {
         );
       }
     );
+    const commentForm = document.querySelectorAll(".comment-form");
+    getForm(commentForm);
   } catch (error) {
     check.allPostsError(error);
   }
