@@ -22,7 +22,9 @@ export async function forwardPost(url, post, method) {
       },
       body: JSON.stringify(post),
     });
-    console.log(response);
+    if (response.ok) {
+      window.location.reload();
+    }
     check.submitPostError(response);
   } catch (error) {
     check.submitPostFault(error);
