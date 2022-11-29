@@ -19,7 +19,7 @@ export function getForm(forms) {
       const formData = event.target;
       const method = formData.method;
       const formId = event.target.id;
-      const body = formData.body.value;
+      const body = formData.body.trim().value;
       const commentPath = `/social/posts/${formId}/comment`;
       const API_COMMENT_URL = `${API_BASE_URL}${commentPath}`;
       const comment = {
