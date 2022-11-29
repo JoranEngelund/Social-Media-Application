@@ -74,9 +74,10 @@ export function createPosts(
     profileImage = avatar;
   }
 
+  const convertedDate = new Date(created).toLocaleDateString();
   const postContainer = document.querySelector("#post-container");
   postContainer.innerHTML += `<div class="card mb-5 shadow">
-                <p class="post-time me-2 mt-2 text-end">${created} </p>
+                <p class="post-time me-2 mt-2 text-end">${convertedDate} </p>
                 <div class="d-flex mt-2 ms-2 mb-4">
                   <img
                     src="${profileImage}"
@@ -122,7 +123,7 @@ export function createPosts(
                         <a href="post-specific.html?id=${id}">View Post</a>
                       </p>
                     </div>
-                    <div class="d-flex gap-3 text-decoration-none ms-2 mb-0">
+                    <div id="edit-delete-post" class="d-flex gap-3 text-decoration-none ms-2 mb-0">
                       <p class="card-text custom-text">
                         <a
                           href="#"
@@ -144,7 +145,7 @@ export function createPosts(
                 </div>
                 <div class="collapse collapse-comment" id="collapseComment${id}">
                   <div class="card card-body mt-2">
-                    <form action="#" id="${id}">
+                    <form method="POST" class="comment-form" id="${id}">
                       <div class="mb-3">
                         <div>
                           <img
@@ -159,6 +160,7 @@ export function createPosts(
                             id="comment"
                             class="form-control post-input shadow mb-3 me-2"
                             placeholder="What do you want to comment?"
+                            required
                           ></textarea>
                           <button
                             type="submit"
