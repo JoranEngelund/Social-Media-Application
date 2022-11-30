@@ -89,7 +89,7 @@ export function createPosts(
                         >
                       </p>
                       <p class="card-text custom-text">
-                        <a id="${id}" href="#">Delete</a>
+                        <a class="delete-post" id="${id}" href="#">Delete</a>
                       </p>
                     </div>`;
   } else {
