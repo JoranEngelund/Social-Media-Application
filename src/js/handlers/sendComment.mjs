@@ -1,7 +1,7 @@
 import * as storage from "../storage/index.mjs";
 
 /**
- * // Async fetch call that sends a form to the API endpoint
+ * // Async fetch call that sends a comment to the API endpoint
  * @param {string} url // url of the API endpoint you want to send the request to
  * @param {object} comment // object of the data you want to send
  * @param {string} method  // type of request method
