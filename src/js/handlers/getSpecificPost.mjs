@@ -63,6 +63,6 @@ export async function getSpecificPost(url) {
     const commentForm = document.querySelectorAll(".comment-form");
     getForm(commentForm);
   } catch (error) {
-    console.log(error);
+    check.allPostsError(error);
   }
 }
