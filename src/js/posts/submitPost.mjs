@@ -16,7 +16,7 @@ export function sendPost() {
     event.preventDefault();
     const formData = event.target;
     const method = formData.method;
-    const title = formData.title.trim().value;
+    const title = formData.title.value;
     const body = formData.body.value;
     const tagsString = formData.tags.value;
     const tags = tagsString.split(",");

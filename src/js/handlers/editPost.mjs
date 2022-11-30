@@ -1,17 +1,17 @@
 import * as storage from "../storage/index.mjs";
 
 /**
- * // Async fetch call that sends a comment to the API endpoint
+ * // Async fetch call that sends a edit-post to the API endpoint
  * @param {string} url // url of the API endpoint you want to send the request to
- * @param {object} comment // object of the data you want to send
+ * @param {object} post // object of the data you want to send
  * @param {string} method  // type of request method
  * @example
  * ```js
  * // call the function with the correct API PATH to send data
- * sendComment(API_COMMENT_URL, comment, POST);
+ * editPost(url, post, PUT);
  * ```
  */
-export async function sendComment(url, comment, method) {
+export async function editPost(url, post, method) {
   try {
     const token = storage.load("accessToken");
     const response = await fetch(url, {
@@ -20,12 +20,11 @@ export async function sendComment(url, comment, method) {
         "Content-Type": "application/json; charset=UTF-8",
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify(comment),
+      body: JSON.stringify(post),
     });
     if (response.ok) {
       window.location.reload();
     }
-    console.log(response);
   } catch (error) {
     console.log(error);
   }

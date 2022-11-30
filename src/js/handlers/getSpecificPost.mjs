@@ -1,6 +1,8 @@
 import * as storage from "../storage/index.mjs";
 import { createPosts } from "../posts/templates/createPost.mjs";
 import * as check from "../error-messages/allPosts-error.mjs";
+import { getForm } from "../posts/comment.mjs";
+import { getEditForm } from "../posts/edit.mjs";
 
 /**
  * // Async function that sends get request with authorization token to retrieve a specific post from API server
@@ -56,6 +58,10 @@ export async function getSpecificPost(url) {
     );
     const viewPost = document.querySelector(".view-post");
     viewPost.classList.add("d-none");
+    const editForm = document.querySelectorAll(".edit-form");
+    getEditForm(editForm);
+    const commentForm = document.querySelectorAll(".comment-form");
+    getForm(commentForm);
   } catch (error) {
     console.log(error);
   }
