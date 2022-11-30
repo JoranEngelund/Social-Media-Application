@@ -81,10 +81,10 @@ export function createPosts(
   if (userName === name) {
     editDeleteHtml = `<div class="edit-delete-post d-flex gap-3 text-decoration-none ms-2 mb-0">
                       <p class="card-text custom-text">
-                        <a id="${id}"
+                        <a class="edit-post"
                           href="#"
                           data-bs-toggle="modal"
-                          data-bs-target="#updatePostModal"
+                          data-bs-target="#updatePostModal${id}"
                           >Edit</a
                         >
                       </p>
@@ -184,5 +184,88 @@ export function createPosts(
                     ${commentsHtml}
                   </div>
                 </div>
-              </div>`;
+              </div>
+              <section id="updatePost">
+                <div
+                  class="modal fade"
+                  id="updatePostModal${id}"
+                  tabindex="-1"
+                  aria-labelledby="updatePostModal"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content bg-secondary">
+                      <div class="d-flex mx-3 mt-3 d-flex justify-content-end">
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body d-flex justify-content-center">
+                        <form class="edit-form" id="${id}">
+                          <div class="mb-3">
+                            <h2 class="form-label text-left custom-label">
+                              Update Post
+                            </h2>
+                            <div>
+                              <div class="mb-3 mt-4">
+                                <label for="update-title" class="form-label"
+                                  >Title *</label
+                                >
+                                <textarea
+                                  name="title"
+                                  id="update-title"
+                                  class="form-control post-input shadow"
+                                  placeholder="Title"
+                                  maxlength="280"
+                                ></textarea>
+                              </div>
+                              <label for="update-post" class="form-label">Body</label>
+                              <textarea
+                                name="body"
+                                id="update-post"
+                                class="form-control post-input shadow mb-3"
+                                placeholder="What do you want to share?"
+                              ></textarea>
+                              <div class="mb-3">
+                                <label for="update-tags" class="form-label">Tags</label>
+                                <input
+                                  name="tags"
+                                  type="text"
+                                  id="update-tags"
+                                  class="form-control post-input shadow"
+                                  placeholder="First tag, second tag, ..."
+                                  pattern="^[a-zA-Z]+(,[a-zA-Z]+)*$"
+                                  title="Tags need to be separated with comma ( , ) - Space is not allowed | Example: Tag1,Tag2,Tag3"
+                                />
+                              </div>
+                              <div class="mb-3">
+                                <label for="update-media" class="form-label"
+                                  >Media</label
+                                >
+                                <input
+                                  name="media"
+                                  type="url"
+                                  id="update-media"
+                                  class="form-control post-input shadow"
+                                  placeholder="Media must be a URL"
+                                  title="media must be a fully formed URL that links to a live and publicly accessible image."
+                                />
+                              </div>
+                            </div>
+                          </div>
+                          <button
+                            type="submit"
+                            class="btn btn-primary mt-4 mb-3 mx-3 px-6 text-center btn-custom shadow"
+                          >
+                            Save changes
+                          </button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+      </section>`;
 }
