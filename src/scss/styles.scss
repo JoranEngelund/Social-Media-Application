@@ -128,6 +128,16 @@ footer a,
   border-radius: 6px;
 }
 
+.send-reaction {
+  font-size: 1.5rem;
+
+  &.send-reaction:hover {
+    background-color: $secondary;
+    border-radius: 50%;
+    box-shadow: $box-shadow;
+  }
+}
+
 @media only screen and (max-width: 400px) {
   .card-text,
   .card-title {
