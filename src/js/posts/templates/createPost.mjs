@@ -66,7 +66,8 @@ export function createPosts(
 
   let reactionHtml = "";
   reactions.forEach(({ symbol, count }) => {
-    reactionHtml += `<p class="card-text">${symbol}(${count})</p>`;
+    reactionHtml += `
+    <p class="card-text mb-2 send-reaction" id="${id}"><a id="${id}" href="#">${symbol}</a></p><p class="card-text me-2">(${count})</p>`;
   });
 
   let profileImage = avatar;
@@ -77,6 +78,14 @@ export function createPosts(
   }
 
   const userName = storage.load("profile").name;
+  const userImage = storage.load("profile").avatar;
+  let userAvatar = userImage;
+  if (userAvatar === null || userAvatar === "") {
+    userAvatar = "/assets/images/profile-image.png";
+  } else {
+    userAvatar = userImage;
+  }
+
   let editDeleteHtml = "";
   if (userName === name) {
     editDeleteHtml = `<div class="edit-delete-post d-flex gap-3 text-decoration-none ms-2 mb-0">
@@ -129,7 +138,7 @@ export function createPosts(
                           aria-expanded="true"
                           aria-controls="collapseReaction${id}"
                           href="collapseReaction${id}" 
-                         class="me-2" href="#">Likes (${reactionCount})</a>
+                         class="me-2" href="#">Reactions (${reactionCount})</a>
                       </p>
                       <p class="card-text custom-text">
                         <a
@@ -150,6 +159,32 @@ export function createPosts(
                 </div>
                 <div class="collapse collapse-comment" id="collapseReaction${id}">
                   <div class="card card-body mt-2 d-flex flex-row">
+                    <p class="card-text mb-2 me-2">Send a reaction: 
+                      <a class="send-reaction" id="${id}" title="Thumbs-up Emoji" href="#">&#128077;</a>
+                      <a class="send-reaction" id="${id}" title="Read Heart Emoji" href="#">❤️</a>
+                      <a class="send-reaction" id="${id}" title="Grinning Face Emoji" href="#">&#128512;</a>
+                      <a class="send-reaction" id="${id}" title="Beaming Face with Smiling Eyes Emoji" href="#">&#128513;</a>
+                      <a class="send-reaction" id="${id}" title="Face with Tears of Joy Emoji" href="#">&#128514;</a>
+                      <a class="send-reaction" id="${id}" title="Grinning Face with Sweat Emoji" href="#">&#128517;</a>
+                      <a class="send-reaction" id="${id}" title="Smiling Face with Halo Emoji" href="#">&#128519;</a>
+                      <a class="send-reaction" id="${id}" title="Smiling Face with Horns Emoji" href="#">&#128520;</a>
+                      <a class="send-reaction" id="${id}" title="Winking Face Emoji" href="#">&#128521;</a>
+                      <a class="send-reaction" id="${id}" title="Smiling Face with Smiling Eyes Emoji" href="#">&#128522;</a>
+                      <a class="send-reaction" id="${id}" title="Face Savoring Food Emoji" href="#">&#128523;</a>
+                      <a class="send-reaction" id="${id}" title="Smiling Face with Heart-Eyes Emoji" href="#">&#128525;</a>
+                      <a class="send-reaction" id="${id}" title="Smiling Face with Sunglasses Emoji" href="#">&#128526;</a>
+                      <a class="send-reaction" id="${id}" title="Neutral Face Emoji" href="#">&#128528;</a>
+                      <a class="send-reaction" id="${id}" title="Face Screaming in Fear Emoji" href="#">&#128561;</a>
+                      <a class="send-reaction" id="${id}" title="Star-Struck Emoji" href="#">&#129321;</a>
+                      <a class="send-reaction" id="${id}" title="Drooling Face Emoji" href="#">&#129316;</a>
+                      <a class="send-reaction" id="${id}" title="Face with Hand Over Mouth Emoji" href="#">&#129325;</a>
+                      <a class="send-reaction" id="${id}" title="Exploding Head Emoji" href="#">&#129327;</a>
+                      <a class="send-reaction" id="${id}" title="Face with Monocle Emoji" href="#">&#129488;</a>
+                    </p>
+                  </div>
+                </div>
+                <div class="collapse collapse-comment" id="collapseReaction${id}">
+                  <div class="card card-body mt-2 d-flex flex-row">
                     ${reactionHtml}
                   </div>
                 </div>
@@ -159,7 +194,7 @@ export function createPosts(
                       <div class="mb-3">
                         <div>
                           <img
-                            src="/assets/images/profile-image.png"
+                            src="${userAvatar}"
                             alt="profile-picture of user"
                             class="card-img-top"
                           />
