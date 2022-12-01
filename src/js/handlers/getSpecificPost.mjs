@@ -4,7 +4,7 @@ import * as check from "../error-messages/allPosts-error.mjs";
 import { getForm } from "../posts/comment.mjs";
 import { getEditForm } from "../posts/edit.mjs";
 import { getDelete } from "../posts/delete.mjs";
-
+import { reactionListener } from "../posts/reaction.mjs";
 /**
  * // Async function that sends get request with authorization token to retrieve a specific post from API server
  * // has nested function calls that generates and displays dynamic html for the post
@@ -57,6 +57,8 @@ export async function getSpecificPost(url) {
       reactionCount,
       reactions
     );
+    const getReaction = document.querySelectorAll(".send-reaction");
+    reactionListener(getReaction);
     const viewPost = document.querySelector(".view-post");
     viewPost.classList.add("d-none");
     const deleteBtn = document.querySelectorAll(".delete-post");
