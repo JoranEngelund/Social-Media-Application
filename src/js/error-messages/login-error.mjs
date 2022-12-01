@@ -16,19 +16,19 @@ export function loginError(response) {
     loginCard.innerHTML = "";
     loginCard.innerHTML += `<h1 class="card-title mt-3">Login</h1>
                                   <p class="card-text mb-1 mt-4 ">
-                                    There seems to be some issues with your login information
+                                    There seems to be some issues with your login credentials. Please try again with different information
                                   </p>
                                   <a href="/index.html"
                                     class="btn btn-primary mt-4 mb-3 px-8 shadow text-uppercase btn-login">
                                     Try again
                                   </a>
                                   <p class="card-text mb-3">
-                                    Please try with other information or 
-                                    <a class="text-decoration-underline"
+                                    If you haven't created an account, please do so
+                                  </p>
+                                  <a class="card text text-decoration-underline mb-3"
                                     href="registration.html">
                                       Create an account
                                     </a>
-                                  </p>
                                   `;
   } else if (response.ok) {
     window.location.replace("/profile.html");
