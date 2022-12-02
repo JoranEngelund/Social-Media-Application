@@ -2,17 +2,15 @@ import { API_BASE_URL } from "../auth/constants.mjs";
 import { editPost } from "../handlers/editPost.mjs";
 
 /**
- * // function that takes a retrieved edit-post-form from a try block and sends it into a forEach with a addEventListener, which sends the form data to api server and edit the post selected
- * @param {*} element // querySelectorAll edit-post modal forms from the rendered posts
+ * // function that retrieves edit-post-form,  from a post and sends it into a forEach with a addEventListener, which sends the form data to api server and edit the post selected
  * @example 
  * ```js
- * // retrieve a modal-form by querySelector all inside a try block
- * const editForm = document.querySelectorAll(".edit-form");
-    getEditForm(editForm);
+ * // Call the function in a scope where it can access .edit-form (form) elements
+    editListener();
  * ```
  */
-export function getEditForm(element) {
-  const editForm = element;
+export function editListener() {
+  const editForm = document.querySelectorAll(".edit-form");
   editForm.forEach((formElement) => {
     formElement.addEventListener("submit", (event) => {
       event.preventDefault();

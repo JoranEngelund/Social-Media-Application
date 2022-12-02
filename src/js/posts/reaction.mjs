@@ -2,18 +2,16 @@ import { API_BASE_URL } from "../auth/constants.mjs";
 import { sendReaction } from "../handlers/reactionPost.mjs";
 
 /**
- * // function that listens on click and then retrieves the reaction elements on, and will then store the elements .innerText and ID in a URL which will be sent to the API server
- * @param {*} reaction // element with the reaction type and ID of the corresponding post
+ * // function that listens on click and then retrieves the reaction elements clicked on, and will then store the elements .innerText and ID in a URL which will be sent to the API server
  * @example
  * ```js
- * // QuerySelectAll elements by the class of the reaction you want to send and pass it in as argument to the function
- * const getReaction = document.querySelectorAll(".classOfReactionElements");
-    reactionListener(getReaction);
+ * // Call the function in a scope where it can access elements with the class .send-reaction
+    reactionListener();
     ```
  */
-export function reactionListener(reaction) {
-  const reactionElements = reaction;
-  reactionElements.forEach((reactionElement) => {
+export function reactionListener() {
+  const getReaction = document.querySelectorAll(".send-reaction");
+  getReaction.forEach((reactionElement) => {
     reactionElement.addEventListener("click", (event) => {
       event.preventDefault();
       const method = "PUT";
