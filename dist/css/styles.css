@@ -13418,6 +13418,15 @@ footer a,
   border-radius: 6px;
 }
 
+.send-reaction {
+  font-size: 1.5rem;
+}
+.send-reaction.send-reaction:hover {
+  background-color: #f5f6f7;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
 @media only screen and (max-width: 400px) {
   .card-text,
 .card-title {
