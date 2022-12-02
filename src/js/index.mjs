@@ -2,7 +2,6 @@
 
 import { registerUser } from "./auth/registration.mjs";
 import { loginUser } from "./auth/login.mjs";
-import { sendPost } from "./posts/submitPost.mjs";
 import { displaySpecificPost } from "./posts/getSpecificPost.mjs";
 import { setup } from "./posts/setup.mjs";
 
