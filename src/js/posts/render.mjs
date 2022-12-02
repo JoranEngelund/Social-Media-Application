@@ -1,8 +1,8 @@
 import * as storage from "../storage/index.mjs";
-import { createPosts } from "../posts/templates/createPost.mjs";
+import { createPosts } from "./templates/createPost.mjs";
 import * as check from "../error-messages/allPosts-error.mjs";
-import { getForm } from "../posts/comment.mjs";
-import { getEditForm } from "../posts/edit.mjs";
+import { getForm } from "./comment.mjs";
+import { getEditForm } from "./edit.mjs";
 import { getDelete } from "../posts/delete.mjs";
 import { reactionListener } from "../posts/reaction.mjs";
 
