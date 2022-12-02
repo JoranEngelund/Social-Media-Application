@@ -1,9 +1,9 @@
 import * as storage from "../storage/index.mjs";
 import { createPosts } from "../posts/templates/createPost.mjs";
 import * as check from "../error-messages/allPosts-error.mjs";
-import { getForm } from "../posts/comment.mjs";
-import { getEditForm } from "../posts/edit.mjs";
-import { getDelete } from "../posts/delete.mjs";
+import { commentListener } from "../posts/comment.mjs";
+import { editListener } from "../posts/edit.mjs";
+import { deleteListener } from "../posts/delete.mjs";
 import { reactionListener } from "../posts/reaction.mjs";
 /**
  * // Async function that sends get request with authorization token to retrieve a specific post from API server
@@ -57,16 +57,13 @@ export async function getSpecificPost(url) {
       reactionCount,
       reactions
     );
-    const getReaction = document.querySelectorAll(".send-reaction");
-    reactionListener(getReaction);
+
     const viewPost = document.querySelector(".view-post");
     viewPost.classList.add("d-none");
-    const deleteBtn = document.querySelectorAll(".delete-post");
-    getDelete(deleteBtn);
-    const editForm = document.querySelectorAll(".edit-form");
-    getEditForm(editForm);
-    const commentForm = document.querySelectorAll(".comment-form");
-    getForm(commentForm);
+    reactionListener();
+    deleteListener();
+    editListener();
+    commentListener();
   } catch (error) {
     check.allPostsError(error);
   }
