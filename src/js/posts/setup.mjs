@@ -16,5 +16,5 @@ export async function setup() {
   const posts = await getPosts(API_POSTS_URL);
   renderPost(posts);
   run.listeners();
-  setSearchListener();
+  setSearchListener(posts);
 }

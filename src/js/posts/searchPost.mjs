@@ -2,7 +2,6 @@ import { renderPost } from "../posts/render.mjs";
 
 export function setSearchListener(posts) {
   const search = document.querySelector(".search-bar");
-
   search.oninput = function (event) {
     const searchValue = event.target.value.trim().toLowerCase();
     const filteredPosts = filterPosts(searchValue, posts);
