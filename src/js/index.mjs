@@ -2,9 +2,9 @@
 
 import { registerUser } from "./auth/registration.mjs";
 import { loginUser } from "./auth/login.mjs";
-import { displayPosts } from "./posts/getPosts.mjs";
 import { sendPost } from "./posts/submitPost.mjs";
 import { displaySpecificPost } from "./posts/getSpecificPost.mjs";
+import { setup } from "./handlers/setup.mjs";
 
 const path = window.location.pathname;
 console.log(path);
@@ -14,8 +14,7 @@ if (path === "/index.html") {
 } else if (path === "/registration.html") {
   registerUser();
 } else if (path === "/home.html") {
-  displayPosts();
-  sendPost();
+  setup();
 } else if (path === "/post-specific.html") {
   displaySpecificPost();
 }
