@@ -1,8 +1,5 @@
 import * as storage from "../storage/index.mjs";
-import { createPosts } from "../posts/templates/createPost.mjs";
 import * as check from "../error-messages/allPosts-error.mjs";
-import { getForm } from "../posts/comment.mjs";
-import { getEditForm } from "../posts/edit.mjs";
 
 /**
  * // Async function that sends get request with authorization token to retrieve all posts from API server
@@ -15,6 +12,7 @@ import { getEditForm } from "../posts/edit.mjs";
  * getPosts(url);
  * ```
  */
+
 export async function getPosts(url) {
   try {
     const token = storage.load("accessToken");
@@ -25,45 +23,8 @@ export async function getPosts(url) {
         Authorization: `Bearer ${token}`,
       },
     });
-    const posts = await response.json();
     check.responseError(response);
-    posts.forEach(
-      ({
-        title,
-        created,
-        id,
-        media,
-        updated,
-        body,
-        tags,
-        author,
-        comments,
-        _count,
-        reactions,
-      }) => {
-        const { name, avatar } = author;
-        const { comments: commentCount, reactions: reactionCount } = _count;
-        createPosts(
-          title,
-          created,
-          id,
-          media,
-          updated,
-          body,
-          tags,
-          name,
-          avatar,
-          comments,
-          commentCount,
-          reactionCount,
-          reactions
-        );
-      }
-    );
-    const editForm = document.querySelectorAll(".edit-form");
-    getEditForm(editForm);
-    const commentForm = document.querySelectorAll(".comment-form");
-    getForm(commentForm);
+    return await response.json();
   } catch (error) {
     check.allPostsError(error);
   }
