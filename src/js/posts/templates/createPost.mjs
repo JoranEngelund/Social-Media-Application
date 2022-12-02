@@ -255,7 +255,7 @@ export function createPosts(
                                   class="form-control post-input shadow"
                                   placeholder="Title"
                                   maxlength="280"
-                                ></textarea>
+                                >${title}</textarea>
                               </div>
                               <label for="update-post" class="form-label">Body</label>
                               <textarea
@@ -263,7 +263,7 @@ export function createPosts(
                                 id="update-post"
                                 class="form-control post-input shadow mb-3"
                                 placeholder="What do you want to share?"
-                              ></textarea>
+                              >${body}</textarea>
                               <div class="mb-3">
                                 <label for="update-tags" class="form-label">Tags</label>
                                 <input
