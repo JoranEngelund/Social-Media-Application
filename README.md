@@ -3,6 +3,7 @@
 - Adding JavaScript functionalities and utilizing HTTP Request Methods.
 
 ```Developers```
-[Benjamin Løndal](https://github.com/dvergnir)
+
+[Benjamin Løndal](https://github.com/dvergnir) & [Jøran Engelund](https://github.com/JoranEngelund)
 
 ```In Development```
