@@ -61,26 +61,27 @@
       <section>
         <div class="container">
           <div class="row">
-            <div class="d-flex mt-6 mb-4">
+            <div class="d-flex mt-6 mb-4 profile-info">
               <img
                 src="/assets/images/profile-image.png"
                 alt="profile-picture of user"
                 class="card-img-top"
               />
-              <h1 class="ms-5 align-self-center">Casey Reeves</h1>
             </div>
-            <div class="mb-3">
-              <button
-                data-bs-toggle="modal"
-                data-bs-target="#updateProfileModal"
-                class="btn btn-light shadow me-1 px-4 mb-2"
-              >
-                Edit Profile
-              </button>
-              <button class="btn btn-primary shadow px-7 mb-2 btn-custom">
-                Follow
-              </button>
-            </div>
+          </div>
+          <div class="mb-3">
+            <button
+              data-bs-toggle="modal"
+              data-bs-target="#updateProfileModal"
+              class="btn btn-light shadow me-1 px-4 mb-2"
+            >
+              Edit Profile
+            </button>
+            <button
+              class="btn btn-primary shadow px-7 mb-2 btn-custom follow-btn"
+            >
+              Follow
+            </button>
           </div>
         </div>
       </section>
@@ -89,94 +90,20 @@
           <div class="row">
             <div class="col xs-12 sm-12 md-6 d-flex flex-column">
               <div class="card shadow mb-5">
-                <h2 class="card-title mt-3 ms-3 mb-5">About</h2>
-                <div class="card-body me-10 mb-4">
-                  <p class="card-text">Lives in Bergen, Norway</p>
-                  <p class="card-text">Educated at Noroff</p>
-                  <p class="card-text">Works at MyBergen</p>
-                  <p class="card-text">Born in 26.10.1993</p>
+                <h2 class="card-title mt-3 ms-3 mb-5">Followers</h2>
+                <div class="card-body mb-4 text-center followers">
+                  <a href="#">
+                    <img
+                      src="/assets/images/profile-image.png"
+                      alt="profile-picture of user"
+                      class="card-img-top m-1"
+                    />
+                  </a>
                 </div>
               </div>
               <div class="card shadow mb-5">
-                <h2 class="card-title mt-3 ms-3 mb-5">Contacts</h2>
-                <div class="card-body mb-4 text-center">
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-top m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-top m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-top m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-top m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-top m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-top m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-top m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-top m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-top m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-top m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-top m-1"
-                    />
-                  </a>
+                <h2 class="card-title mt-3 ms-3 mb-5">Following</h2>
+                <div class="card-body mb-4 text-center following">
                   <a href="#">
                     <img
                       src="/assets/images/profile-image.png"
@@ -193,7 +120,7 @@
               <form action="#">
                 <div class="mb-3">
                   <label for="post" class="form-label text-left custom-label"
-                    >Share something with Casey Reeves</label
+                    >Share something</label
                   >
                   <div>
                     <div class="mb-3 mt-4">
@@ -506,5 +433,6 @@
       >
     </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/src/js/profile/profile.mjs" type="module"></script>
   </body>
 </html>
