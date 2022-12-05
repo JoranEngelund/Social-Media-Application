@@ -3,8 +3,6 @@ import * as check from "../error-messages/allPosts-error.mjs";
 
 /**
  * // Async function that sends get request with authorization token to retrieve all posts from API server
- * // Loops over all posts with forEach method and destructures it to access necessary properties
- * // has nested function calls that generates and displays dynamic html for posts
  * @param {string} url // API url
  * @example
  * ```js
