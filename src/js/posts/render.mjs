@@ -1,7 +1,16 @@
 import { createPosts } from "./templates/createPost.mjs";
 
+/**
+ * // Loops over all posts with forEach method and destructures it to access necessary properties
+ * // has nested function calls that generates and displays dynamic html for posts
+ * @param {*} posts
+ * @example
+ * ```js
+ * Call the function and pass in posts as argument
+ * renderPost(posts);
+ * ```
+ */
 export function renderPost(posts) {
-  const allPosts = posts;
   posts.forEach(
     ({
       title,
