@@ -1,4 +1,16 @@
-import * as storage from "../../storage/index.mjs";
+/**
+ * // createProfile function that generates and displays dynamic generated html to render users profile
+ * @param {*} name
+ * @param {*} avatar
+ * @param {*} email
+ * @param {*} banner
+ * @param {*} followers
+ * @param {*} following
+ * * ```js
+ * // call the function and pass in the arguments you want to use
+ * createProfile(name, avatar, email, banner, followers, following)
+ * ```
+ */
 
 export function createProfile(
   name,
