@@ -6,6 +6,7 @@ import { displaySpecificPost } from "./posts/getSpecificPost.mjs";
 import { setup } from "./posts/setup.mjs";
 import { filterTags } from "./filter/filterTags.mjs";
 import { sortPosts } from "./sorter/sortType.mjs";
+import { signout } from "./auth/logout.mjs";
 
 const path = window.location.pathname;
 console.log(path);
@@ -16,10 +17,16 @@ if (path === "/index.html") {
   registerUser();
 } else if (path === "/home.html") {
   setup();
+  signout();
 } else if (path === "/post-specific.html") {
   displaySpecificPost();
+  signout();
 } else if (path === "/post-filter.html") {
   filterTags();
+  signout();
 } else if (path === "/post-sorted.html") {
   sortPosts();
+  signout();
+} else if (path === "/profile.html") {
+  signout();
 }
