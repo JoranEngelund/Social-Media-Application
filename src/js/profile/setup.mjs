@@ -1,6 +1,10 @@
 import { renderProfile } from "./renderProfile.mjs";
 import { getMyProfile } from "../handlers/getProfile.mjs";
 import * as storage from "../storage/index.mjs";
+import { getPost } from "../handlers/getPost.mjs";
+import { renderPost } from "../posts/render.mjs";
+import * as run from "../posts/listeners.mjs";
+
 /**
  * //Function that sets up profile using getMyProfile() fetch and initializing renderProfile()
  * @example
@@ -15,3 +19,15 @@ export async function setupProfile() {
   const profile = await getMyProfile(API_PROFILE_URL);
   renderProfile(profile);
 }
+
+export async function setup() {
+  const user = storage.load("profile").name;
+  const postURL = `https://api.noroff.dev/api/v1/social/profiles/${user}/posts?_author=true&_reactions=true&_comments=true`;
+  console.log(postURL);
+  const profilePosts = await getPost(postURL);
+  renderPost(profilePosts);
+  console.log(profilePosts);
+  run.listeners();
+}
+
+setup();

@@ -170,20 +170,30 @@
                       Post
                     </button>
                   </div>
+                  <section>
+                    <div class="container">
+                      <div class="row">
+                        <div class="d-flex mt-6 mb-4 profile-feed"></div>
+                      </div>
+                    </div>
+                  </section>
+                  <section id="feed-container">
+                    <div class="container">
+                      <div class="row">
+                        <div
+                          id="post-container"
+                          class="col-12 lg-6 d-flex flex-column justify-content-center align-items-center text-left"
+                        ></div>
+                      </div>
+                    </div>
+                  </section>
                 </div>
               </form>
-              <h2 class="custom-label mt-3 mb-3 align-self-left">Wall</h2>
             </div>
           </div>
         </div>
       </section>
-      <section>
-        <div class="container">
-          <div class="row">
-            <div class="d-flex mt-6 mb-4 profile-feed"></div>
-          </div>
-        </div>
-      </section>
+
       <section id="updateProfile">
         <div
           class="modal fade"
@@ -260,5 +270,6 @@
     </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/src/js/index.mjs" type="module"></script>
+    <script src="/src/js/posts/getProfilePosts.mjs" type="module"></script>
   </body>
 </html>
