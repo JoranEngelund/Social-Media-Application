@@ -13,7 +13,6 @@ import * as run from "./listeners.mjs";
  */
 export async function setup() {
   const posts = await getPosts(API_POSTS_URL);
-  console.log(posts);
   renderPost(posts);
   run.listeners();
 }
