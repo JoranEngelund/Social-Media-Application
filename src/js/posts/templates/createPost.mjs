@@ -108,14 +108,14 @@ export function createPosts(
   const convertedDate = new Date(created).toLocaleDateString();
   const postContainer = document.querySelector("#post-container");
   postContainer.innerHTML += `<div class="post card mb-5 shadow">
-                <p class="post-time me-2 mt-2 text-end">${convertedDate} </p>
+                <p class="post-time me-2 mt-2 text-end">${convertedDate}</p>
                 <div class="d-flex mt-2 ms-2 mb-4">
                   <img
                     src="${profileImage}"
                     alt="profile-picture of user"
                     class="card-img-top"
                   />
-                  <h3 class="card-title custom-title ms-3 align-self-center">
+                  <h3 class="card-title custom-title ms-3 align-self-center owner">
                     <a href="/profile-specific.html?name=${name}">${name}</a>
                   </h3>
                 </div>
@@ -138,7 +138,7 @@ export function createPosts(
                           aria-expanded="true"
                           aria-controls="collapseReaction${id}"
                           href="collapseReaction${id}" 
-                         class="me-2" href="#">Reactions (${reactionCount})</a>
+                         class="me-2" href="#">Likes (${reactionCount})</a>
                       </p>
                       <p class="card-text custom-text">
                         <a
