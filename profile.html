@@ -122,6 +122,7 @@
                   <label for="post" class="form-label text-left custom-label"
                     >Share something</label
                   >
+
                   <div>
                     <div class="mb-3 mt-4">
                       <label for="title" class="form-label">Title *</label>
@@ -172,107 +173,14 @@
                 </div>
               </form>
               <h2 class="custom-label mt-3 mb-3 align-self-left">Wall</h2>
-              <div class="card mb-5 shadow">
-                <p class="post-time me-2 mt-2 text-end">22.11.2022</p>
-                <div class="d-flex mt-2 ms-2 mb-4">
-                  <img
-                    src="/assets/images/profile-image.png"
-                    alt="profile-picture of user"
-                    class="card-img-top"
-                  />
-                  <h3 class="card-title custom-title ms-3 align-self-center">
-                    Michael Quinn
-                  </h3>
-                </div>
-                <div class="card-body">
-                  <p class="card-text mb-4">
-                    But I must explain to you how all this mistaken idea of
-                    denouncing pleasure and praising pain was born and I will
-                    give you a complete account of the system, and expound the
-                    actual teachings of the great explorer of the truth, the
-                    master-builder of human happiness. No one rejects, dislikes,
-                    or avoids pleasure itself, because it is pleasure, but
-                    because those who do not know how to pursue pleasure
-                    rationally encounter consequences that are extremely
-                    painful.
-                  </p>
-                  <div class="d-flex justify-content-between">
-                    <div class="d-flex gap-3 text-decoration-none mb-0">
-                      <p class="card-text custom-text"><a href="#">Like</a></p>
-                      <p class="card-text custom-text">
-                        <a href="#">Comment</a>
-                      </p>
-                      <p class="card-text custom-text">
-                        <a href="post-specific.html">View Post</a>
-                      </p>
-                    </div>
-                    <div class="d-flex gap-3 text-decoration-none ms-2 mb-0">
-                      <p class="card-text custom-text">
-                        <a
-                          href="#"
-                          data-bs-toggle="modal"
-                          data-bs-target="#updatePostModal"
-                          >Edit</a
-                        >
-                      </p>
-                      <p class="card-text custom-text">
-                        <a href="#">Delete</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="card mb-5 shadow">
-                <p class="post-time me-2 mt-2 text-end">22.11.2022</p>
-                <div class="d-flex mt-2 ms-2 mb-4">
-                  <img
-                    src="/assets/images/profile-image.png"
-                    alt="profile-picture of user"
-                    class="card-img-top"
-                  />
-                  <h3 class="card-title custom-title ms-3 align-self-center">
-                    Casey Reeves
-                  </h3>
-                </div>
-                <div class="card-body">
-                  <p class="card-text mb-4">
-                    But I must explain to you how all this mistaken idea of
-                    denouncing pleasure and praising pain was born and I will
-                    give you a complete account of the system, and expound the
-                    actual teachings of the great explorer of the truth, the
-                    master-builder of human happiness. No one rejects, dislikes,
-                    or avoids pleasure itself, because it is pleasure, but
-                    because those who do not know how to pursue pleasure
-                    rationally encounter consequences that are extremely
-                    painful.
-                  </p>
-                  <div class="d-flex justify-content-between">
-                    <div class="d-flex gap-3 text-decoration-none mb-0">
-                      <p class="card-text custom-text"><a href="#">Like</a></p>
-                      <p class="card-text custom-text">
-                        <a href="#">Comment</a>
-                      </p>
-                      <p class="card-text custom-text">
-                        <a href="post-specific.html">View Post</a>
-                      </p>
-                    </div>
-                    <div class="d-flex gap-3 text-decoration-none ms-2 mb-0">
-                      <p class="card-text custom-text">
-                        <a
-                          href="#"
-                          data-bs-toggle="modal"
-                          data-bs-target="#updatePostModal"
-                          >Edit</a
-                        >
-                      </p>
-                      <p class="card-text custom-text">
-                        <a href="#">Delete</a>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="d-flex mt-6 mb-4 profile-feed"></div>
           </div>
         </div>
       </section>
@@ -325,88 +233,6 @@
                           class="form-control post-input shadow"
                           placeholder="Banner must be a URL"
                           title="banner must be a fully formed URL that links to a live and publicly accessible image."
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <button
-                    type="submit"
-                    class="btn btn-primary mt-4 mb-3 mx-3 px-6 text-center btn-custom shadow"
-                  >
-                    Save changes
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="updatePost">
-        <div
-          class="modal fade"
-          id="updatePostModal"
-          tabindex="-1"
-          aria-labelledby="updatePostModal"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content bg-secondary">
-              <div class="d-flex mx-3 mt-3 d-flex justify-content-end">
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body d-flex justify-content-center">
-                <form action="#">
-                  <div class="mb-3">
-                    <h2 class="form-label text-left custom-label">
-                      Update Post
-                    </h2>
-                    <div>
-                      <div class="mb-3 mt-4">
-                        <label for="update-title" class="form-label"
-                          >Title *</label
-                        >
-                        <textarea
-                          name="title"
-                          id="update-title"
-                          class="form-control post-input shadow"
-                          placeholder="Title"
-                          maxlength="280"
-                          required
-                        ></textarea>
-                      </div>
-                      <label for="update-post" class="form-label">Body</label>
-                      <textarea
-                        name="body"
-                        id="update-post"
-                        class="form-control post-input shadow mb-3"
-                        placeholder="What do you want to share?"
-                      ></textarea>
-                      <div class="mb-3">
-                        <label for="update-tags" class="form-label">Tags</label>
-                        <input
-                          name="tags"
-                          type="text"
-                          id="update-tags"
-                          class="form-control post-input shadow"
-                          placeholder="First tag, second tag, ..."
-                        />
-                      </div>
-                      <div class="mb-3">
-                        <label for="update-media" class="form-label"
-                          >Media</label
-                        >
-                        <input
-                          name="media"
-                          type="url"
-                          id="update-media"
-                          class="form-control post-input shadow"
-                          placeholder="Media must be a URL"
-                          title="media must be a fully formed URL that links to a live and publicly accessible image."
                         />
                       </div>
                     </div>
