@@ -39,7 +39,6 @@ export async function getSpecificPost(url) {
       _count,
       reactions,
     } = post;
-
     const { avatar, name } = author;
     const { comments: commentCount, reactions: reactionCount } = _count;
     createPosts(
