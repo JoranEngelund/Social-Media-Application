@@ -6,11 +6,11 @@ import { reactionListener } from "./reaction.mjs";
 import { renderSpecificPost } from "./renderSpecific.mjs";
 
 /**
- * // function that sets up an environment where it fetches all posts from the API endpoint, renders and displayes them on a feed and also sets up an environment for commenting, editing, reacting and sending a post on the home feed
+ * // function that sets up an environment where it fetches a specific post from the API endpoint, renders and displayes it in a feed and also sets up an environment for commenting, editing, reacting, deleting on the specific post
  * @example
  * ```js
- * // call the function setup()
- * setup()
+ * // call the function setupSpecificPost()
+ * setupSpecificPost();
  * ```
  */
 export async function setupSpecificPost() {

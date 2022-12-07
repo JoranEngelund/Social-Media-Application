@@ -1,5 +1,15 @@
 import { createPosts } from "./templates/createPost.mjs";
 
+/**
+ * // destructures a single post, to access the necessary properties
+ * // has nested function calls that generates and displays dynamic html for posts
+ * @param {*} post
+ * @example
+ * ```js
+ * Call the function and pass in post as argument
+ * renderSpecificPost(post);
+ * ```
+ */
 export function renderSpecificPost(post) {
   const {
     title,
