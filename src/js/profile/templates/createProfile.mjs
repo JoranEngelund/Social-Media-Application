@@ -56,7 +56,7 @@ export function createProfile(
     } else {
       followingImage = followingAvatar;
     }
-    followerHtml.innerHTML += `<a href="#">
+    followingHtml.innerHTML += `<a href="#">
                     <img
                       src="${followingAvatar}"
                       alt="profile-picture of user"
