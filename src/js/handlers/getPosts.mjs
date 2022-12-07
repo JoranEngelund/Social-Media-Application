@@ -1,6 +1,5 @@
 import * as storage from "../storage/index.mjs";
 import * as check from "../error-messages/allPosts-error.mjs";
-
 /**
  * // Async function that sends get request with authorization token to retrieve all posts from API server
  * @param {string} url // API url

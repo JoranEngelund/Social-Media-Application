@@ -2,8 +2,11 @@
 
 import { registerUser } from "./auth/registration.mjs";
 import { loginUser } from "./auth/login.mjs";
-import { displaySpecificPost } from "./posts/getSpecificPost.mjs";
 import { setup } from "./posts/setup.mjs";
+import { filterTags } from "./filter/filterTags.mjs";
+import { signout } from "./auth/logout.mjs";
+import { setupSpecificPost } from "./posts/setupSpecific.mjs";
+import { sortPosts } from "./sorter/sortType.mjs";
 
 const path = window.location.pathname;
 console.log(path);
@@ -14,6 +17,16 @@ if (path === "/index.html") {
   registerUser();
 } else if (path === "/home.html") {
   setup();
+  signout();
 } else if (path === "/post-specific.html") {
-  displaySpecificPost();
+  setupSpecificPost();
+  signout();
+} else if (path === "/post-filter.html") {
+  filterTags();
+  signout();
+} else if (path === "/post-sorted.html") {
+  sortPosts();
+  signout();
+} else if (path === "/profile.html") {
+  signout();
 }

@@ -25,46 +25,13 @@ export async function getSpecificPost(url) {
         Authorization: `Bearer ${token}`,
       },
     });
-    const post = await response.json();
-    const {
-      title,
-      created,
-      id,
-      media,
-      updated,
-      body,
-      tags,
-      author,
-      comments,
-      _count,
-      reactions,
-    } = post;
-
-    const { avatar, name } = author;
-    const { comments: commentCount, reactions: reactionCount } = _count;
-    createPosts(
-      title,
-      created,
-      id,
-      media,
-      updated,
-      body,
-      tags,
-      name,
-      avatar,
-      comments,
-      commentCount,
-      reactionCount,
-      reactions
-    );
-
-    const viewPost = document.querySelector(".view-post");
-    viewPost.classList.add("d-none");
-    reactionListener();
-    deleteListener();
-    editListener();
-    commentListener();
+    if (!response.ok) {
+      window.location.replace("/home.html");
+    }
+    return await response.json();
   } catch (error) {
-    check.allPostsError(error);
+    if (error) {
+      window.location.replace("/home.html");
+    }
   }
 }
