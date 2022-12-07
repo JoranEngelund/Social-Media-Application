@@ -5,9 +5,9 @@ import { loginUser } from "./auth/login.mjs";
 //import { displaySpecificPost } from "./posts/getSpecificPost.mjs";
 import { setup } from "./posts/setup.mjs";
 import { filterTags } from "./filter/filterTags.mjs";
-import { sortPosts } from "./sorter/sortType.mjs";
 import { signout } from "./auth/logout.mjs";
 import { setupSpecificPost } from "./posts/setupSpecific.mjs";
+import { sortPosts } from "./sorter/sortType.mjs";
 
 const path = window.location.pathname;
 console.log(path);
