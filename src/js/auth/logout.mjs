@@ -10,7 +10,6 @@ import * as storage from "../storage/index.mjs";
  */
 export function signout() {
   const signout = document.querySelectorAll(".sign-out");
-  console.log(signout);
   signout.forEach((linkElement) => {
     const logout = linkElement;
     logout.addEventListener("click", (event) => {
