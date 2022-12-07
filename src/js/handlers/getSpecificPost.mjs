@@ -25,6 +25,9 @@ export async function getSpecificPost(url) {
         Authorization: `Bearer ${token}`,
       },
     });
+    if (!response.ok) {
+      window.location.replace("/home.html");
+    }
     return await response.json();
   } catch (error) {
     if (error) {
