@@ -1,4 +1,3 @@
-import { getPost } from "../handlers/getPost.mjs";
 import { API_PROFILE_URL } from "../auth/constants.mjs";
 
 /**

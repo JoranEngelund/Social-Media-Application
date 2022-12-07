@@ -4,6 +4,7 @@ import * as storage from "../storage/index.mjs";
 import { getPost } from "../handlers/getPost.mjs";
 import { renderProfilePosts } from "../posts/renderProfilePosts.mjs";
 import * as run from "../posts/listeners.mjs";
+import { profileListeners } from "./listeners.mjs";
 
 /**
  * //Function that sets up profile using getMyProfile() fetch and initializing renderProfile()
@@ -26,4 +27,5 @@ export async function setupProfile() {
   const profilePosts = await getPost(postURL);
   renderProfilePosts(profilePosts);
   run.listeners();
+  profileListeners();
 }

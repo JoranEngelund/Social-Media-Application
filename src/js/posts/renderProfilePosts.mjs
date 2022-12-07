@@ -11,7 +11,6 @@ import { createPosts } from "./templates/createPost.mjs";
  * ```
  */
 export function renderProfilePosts(profilePosts) {
-  console.log(profilePosts);
   profilePosts.forEach(
     ({
       title,
