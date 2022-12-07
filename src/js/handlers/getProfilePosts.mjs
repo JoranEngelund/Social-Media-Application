@@ -1,6 +1,5 @@
 import * as storage from "../storage/index.mjs";
 import * as check from "../error-messages/allPosts-error.mjs";
-import { renderPost } from "./render.mjs";
 
 /**
  * // Async function that sends get request with authorization token to retrieve all posts from API server
@@ -12,10 +11,10 @@ import { renderPost } from "./render.mjs";
  * ```
  */
 
-export async function getPost() {
+export async function getPost(url) {
   try {
     const token = storage.load("accessToken");
-    const response = await fetch(postURL, {
+    const response = await fetch(url, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -26,7 +25,7 @@ export async function getPost() {
     console.log(json);
     check.responseError(response);
   } catch (error) {
-    check.allPostsError(error);
+    console.log(error);
   }
 }
 

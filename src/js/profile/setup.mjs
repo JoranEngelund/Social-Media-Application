@@ -23,10 +23,8 @@ export async function setupProfile() {
 export async function setup() {
   const user = storage.load("profile").name;
   const postURL = `https://api.noroff.dev/api/v1/social/profiles/${user}/posts?_author=true&_reactions=true&_comments=true`;
-  console.log(postURL);
   const profilePosts = await getPost(postURL);
   renderPost(profilePosts);
-  console.log(profilePosts);
   run.listeners();
 }
 

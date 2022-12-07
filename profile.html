@@ -117,7 +117,7 @@
             <div
               class="col xs-12 sm-12 md-6 d-flex flex-column justify-content-center align-items-left text-left"
             >
-              <form action="#">
+              <form form method="POST" id="send-post">
                 <div class="mb-3">
                   <label for="post" class="form-label text-left custom-label"
                     >Share something</label
@@ -172,18 +172,14 @@
                   </div>
                   <section>
                     <div class="container">
-                      <div class="row">
-                        <div class="d-flex mt-6 mb-4 profile-feed"></div>
-                      </div>
+                      <div class="row"></div>
                     </div>
                   </section>
                   <section id="feed-container">
                     <div class="container">
                       <div class="row">
-                        <div
-                          id="post-container"
-                          class="col-12 lg-6 d-flex flex-column justify-content-center align-items-center text-left"
-                        ></div>
+                        <h2 class="custom-label mt-3">Wall</h2>
+                        <div id="post-container"></div>
                       </div>
                     </div>
                   </section>
@@ -270,6 +266,5 @@
     </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/src/js/index.mjs" type="module"></script>
-    <script src="/src/js/posts/getProfilePosts.mjs" type="module"></script>
   </body>
 </html>
