@@ -12,13 +12,13 @@ import * as storage from "../storage/index.mjs";
  */
 export function editProfileListener() {
   const user = storage.load("profile").name;
-  const editProfileForm = document.getElementById("update-profile-media");
+  const editProfileForm = document.querySelector("#update-profile-media");
   editProfileForm.addEventListener("submit", (event) => {
     event.preventDefault();
     const formData = event.target;
     const method = "PUT";
-    const avatar = formData.avatar;
-    const banner = formData.banner;
+    const avatar = formData.avatar.value;
+    const banner = formData.banner.value;
     const editPath = `/social/profiles/${user}/media`;
     const API_EDIT_URL = `${API_BASE_URL}${editPath}`;
     const profileMedia = {
