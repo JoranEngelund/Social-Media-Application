@@ -13427,6 +13427,10 @@ footer a,
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
+.reaction-container {
+  flex-flow: wrap;
+}
+
 .tags {
   max-height: 11rem;
   overflow: hidden scroll;

@@ -184,7 +184,7 @@ export function createPosts(
                   </div>
                 </div>
                 <div class="collapse collapse-comment" id="collapseReaction${id}">
-                  <div class="card card-body mt-2 d-flex flex-row">
+                  <div class="card card-body mt-2 d-flex flex-row reaction-container">
                     ${reactionHtml}
                   </div>
                 </div>

@@ -138,6 +138,10 @@ footer a,
   }
 }
 
+.reaction-container {
+  flex-flow: wrap;
+}
+
 .tags {
   max-height: 11rem;
   overflow: hidden scroll;
