@@ -88,7 +88,7 @@ export function createPosts(
 
   let editDeleteHtml = "";
   if (userName === name) {
-    editDeleteHtml = `<div class="edit-delete-post d-flex gap-3 text-decoration-none ms-2 mb-0">
+    editDeleteHtml = `<div class="edit-delete-post d-flex gap-3 text-decoration-none ms-2 mb-0 post-components">
                       <p class="card-text custom-text">
                         <a class="edit-post"
                           href="#"
@@ -270,6 +270,7 @@ export function createPosts(
                                   name="tags"
                                   type="text"
                                   id="update-tags"
+                                  value="${tags}"
                                   class="form-control post-input shadow"
                                   placeholder="First tag, second tag, ..."
                                   pattern="^[a-zA-Z]+(,[a-zA-Z]+)*$"
@@ -284,6 +285,7 @@ export function createPosts(
                                   name="media"
                                   type="url"
                                   id="update-media"
+                                  value="${media}"
                                   class="form-control post-input shadow"
                                   placeholder="Media must be a URL"
                                   title="media must be a fully formed URL that links to a live and publicly accessible image."
