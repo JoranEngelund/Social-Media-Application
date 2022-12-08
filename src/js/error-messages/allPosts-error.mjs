@@ -15,9 +15,6 @@ export function responseError(response) {
                                   <p class="card-text mb-4">
                                     An error has occured, please refresh the page or try again later
                                   </p>
-                                  <p class="card-text mb-3">
-                                    Please try another account
-                                  </p>
                                   <a href="./home.html"
                                     class="btn btn-primary mt-4 mb-3 px-8 shadow text-uppercase btn-login">
                                     Try again
