@@ -36,7 +36,9 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto">
               <li class="nav-item">
-                <a href="/home.html" class="nav-link rounded py-1 px-3 mx-2"
+                <a
+                  href="/home.html"
+                  class="nav-link bg-primary text-light rounded py-1 px-3 mx-2 shadow"
                   >Home</a
                 >
               </li>
@@ -46,30 +48,47 @@
                 >
               </li>
               <li class="nav-item">
-                <a href="/index.html" class="nav-link rounded py-1 px-3 mx-2"
+                <a
+                  href="/index.html"
+                  class="nav-link rounded py-1 px-3 mx-2 sign-out"
                   >Sign out</a
                 >
               </li>
             </ul>
+            <form class="d-flex" role="search">
+              <input
+                type="search"
+                class="form-control search-bar ps-4 navbar-dark"
+                placeholder="Search"
+                aria-label="search"
+              />
+            </form>
           </div>
         </div>
       </nav>
     </header>
     <main>
-      <section>
+      <section id="feed-container">
         <div class="container">
           <div class="row justify-content-center">
             <div
               id="post-container"
               class="col-12 lg-6 d-flex flex-column justify-content-center align-items-center text-left"
             >
-              <h1 class="custom-label mt-3 mb-3">Post</h1>
-            </div>
-            <div
-              class="spinner-border text-primary toggleLoadingIndicator"
-              role="status"
-            >
-              <span class="visually-hidden">Loading...</span>
+              <h1 class="custom-label mt-3 tags-header"></h1>
+              <div class="d-flex flex-row gap-3">
+                <a
+                  href="/home.html"
+                  class="btn btn-primary mt-4 mb-3 px-5 text-center btn-custom shadow"
+                  >Back to feed</a
+                >
+              </div>
+              <div
+                class="spinner-border text-primary toggleLoadingIndicator"
+                role="status"
+              >
+                <span class="visually-hidden">Loading...</span>
+              </div>
             </div>
           </div>
         </div>

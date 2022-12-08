@@ -1,3 +1,4 @@
+import { filterTemplateTags } from "../filter/templates/filter-dropdown.mjs";
 import { createPosts } from "./templates/createPost.mjs";
 
 /**
@@ -27,6 +28,7 @@ export function renderPost(posts) {
     }) => {
       const { name, avatar } = author;
       const { comments: commentCount, reactions: reactionCount } = _count;
+      filterTemplateTags(tags);
       createPosts(
         title,
         created,

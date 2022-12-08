@@ -138,6 +138,20 @@ footer a,
   }
 }
 
+.tags {
+  max-height: 11rem;
+  overflow: hidden scroll;
+}
+
+.spinner-border {
+  width: 6rem;
+  height: 6rem;
+  position: fixed;
+  top: 50%;
+  border-width: 0.7em;
+  z-index: 2;
+}
+
 @media only screen and (max-width: 400px) {
   .card-text,
   .card-title {

@@ -3,6 +3,7 @@ import { renderPost } from "./render.mjs";
 import { API_POSTS_URL } from "../auth/constants.mjs";
 import * as run from "./listeners.mjs";
 import { setSearchListener } from "./searchPost.mjs";
+import { toggleLoadingIndicator } from "../loader/loadingIndicator.mjs";
 
 /**
  * // function that sets up an environment where it fetches all posts from the API endpoint, renders and displayes them on a feed
@@ -18,4 +19,5 @@ export async function setup() {
   renderPost(posts);
   run.listeners();
   setSearchListener(posts);
+  toggleLoadingIndicator(posts);
 }

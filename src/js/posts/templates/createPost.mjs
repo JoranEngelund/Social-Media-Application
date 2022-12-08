@@ -138,7 +138,7 @@ export function createPosts(
                           aria-expanded="true"
                           aria-controls="collapseReaction${id}"
                           href="collapseReaction${id}" 
-                         class="me-2" href="#">Reactions (${reactionCount})</a>
+                         class="me-2" href="#">Likes (${reactionCount})</a>
                       </p>
                       <p class="card-text custom-text">
                         <a
