@@ -5,6 +5,7 @@ import { reactionListener } from "../posts/reaction.mjs";
 import { commentListener } from "../posts/comment.mjs";
 import { editListener } from "../posts/edit.mjs";
 import { deleteListener } from "../posts/delete.mjs";
+import { toggleLoadingIndicator } from "../loading/loadingIndicator.mjs";
 
 /**
  * // Async fetch call the sends a GET request to the server with the provided URL, returning the posts filtered by one tag name
@@ -64,6 +65,7 @@ export async function filteredTagPost(url) {
     commentListener();
     editListener();
     deleteListener();
+    toggleLoadingIndicator(posts);
   } catch (error) {
     check.allPostsError(error);
     console.log(error);

@@ -1,4 +1,6 @@
 import { getSpecificPost } from "../handlers/getSpecificPost.mjs";
+import { toggleLoadingIndicator } from "../loading/loadingIndicator.mjs";
+import { load } from "../storage/index.mjs";
 import { commentListener } from "./comment.mjs";
 import { deleteListener } from "./delete.mjs";
 import { editListener } from "./edit.mjs";
@@ -24,4 +26,5 @@ export async function setupSpecificPost() {
   deleteListener();
   editListener();
   commentListener();
+  toggleLoadingIndicator(post);
 }

@@ -3,6 +3,7 @@ import * as check from "../error-messages/allPosts-error.mjs";
 import * as run from "../posts/listeners.mjs";
 import { createPosts } from "../posts/templates/createPost.mjs";
 import { filterTemplateTags } from "../filter/templates/filter-dropdown.mjs";
+import { toggleLoadingIndicator } from "../loading/loadingIndicator.mjs";
 
 /**
  * // Async fetch call that sorts the posts based on the URL endpoint with the neccessary sort="typeOfSort" & sortOrder="sortOrder" flags. returns and displays the posts sorted
@@ -60,6 +61,7 @@ export async function sortedPosts(url) {
       }
     );
     run.listeners();
+    toggleLoadingIndicator(posts);
   } catch (error) {
     check.allPostsError(error);
   }
