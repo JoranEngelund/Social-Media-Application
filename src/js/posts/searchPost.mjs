@@ -37,7 +37,10 @@ function filterPosts(searchValue, posts) {
   const postContainer = document.getElementById("post-container");
   postContainer.innerHTML = "";
   const filteredPosts = posts.filter(function (postData) {
-    if (postData.title.toLowerCase().includes(searchValue)) {
+    if (
+      postData.title.toLowerCase().includes(searchValue) ||
+      postData.author.name.toLowerCase().includes(searchValue)
+    ) {
       return true;
     }
   });

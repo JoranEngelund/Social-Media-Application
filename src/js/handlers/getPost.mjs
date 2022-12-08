@@ -7,10 +7,10 @@ import * as check from "../error-messages/allPosts-error.mjs";
  * @example
  * ```js
  * // Call the function and pass in API-url as argument
- * getPosts(url);
+ * getPost(url);
  * ```
  */
-export async function getPosts(url) {
+export async function getPost(url) {
   try {
     const token = storage.load("accessToken");
     const response = await fetch(url, {

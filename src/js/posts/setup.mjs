@@ -1,4 +1,4 @@
-import { getPosts } from "../handlers/getPosts.mjs";
+import { getPost } from "../handlers/getPost.mjs";
 import { renderPost } from "./render.mjs";
 import { API_POSTS_URL } from "../auth/constants.mjs";
 import * as run from "./listeners.mjs";
@@ -14,7 +14,7 @@ import { setSearchListener } from "./searchPost.mjs";
  * ```
  */
 export async function setup() {
-  const posts = await getPosts(API_POSTS_URL);
+  const posts = await getPost(API_POSTS_URL);
   renderPost(posts);
   run.listeners();
   setSearchListener(posts);

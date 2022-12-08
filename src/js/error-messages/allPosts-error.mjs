@@ -11,7 +11,7 @@ export function responseError(response) {
   if (!response.ok) {
     const postContainer = document.querySelector("#post-container");
     postContainer.innerHTML = "";
-    postContainer.innerHTML = `<h2 class="custom-label mt-3">Feed</h2>
+    postContainer.innerHTML = `
                                   <p class="card-text mb-4">
                                     An error has occured, please refresh the page or try again later
                                   </p>
