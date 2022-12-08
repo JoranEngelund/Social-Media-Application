@@ -21,7 +21,7 @@ export function commentListener() {
       const commentPath = `/social/posts/${formId}/comment`;
       const API_COMMENT_URL = `${API_BASE_URL}${commentPath}`;
       const comment = {
-        body,
+        body: body,
       };
       sendComment(API_COMMENT_URL, comment, method);
     });

@@ -29,8 +29,8 @@ export function loginUser() {
     const email = formData.email.value;
     const password = formData.password.value;
     const profile = {
-      email,
-      password,
+      email: email,
+      password: password,
     };
     login(API_LOGIN_URL, profile, method);
   });

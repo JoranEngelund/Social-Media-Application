@@ -48,9 +48,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a
-                  href="/index.html"
-                  class="nav-link rounded py-1 px-3 mx-2 sign-out"
+                <a href="/index.html" class="nav-link rounded py-1 px-3 mx-2"
                   >Sign out</a
                 >
               </li>
@@ -144,57 +142,12 @@
             >
               <h2 class="custom-label mt-3">Feed</h2>
               <div class="d-flex flex-row gap-3">
-                <div class="dropdown-left mb-3">
-                  <button
-                    class="btn btn-light shadow dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Filter tags
-                  </button>
-                  <ul class="dropdown-menu tags"></ul>
-                </div>
-                <div class="dropdown-left mb-3">
-                  <button
-                    class="btn btn-light shadow dropdown-toggle"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Sort posts
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        href="/post-sorted.html?sort=title&sortOrder=asc"
-                        >Sort Title A-Z</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        href="/post-sorted.html?sort=title&sortOrder=desc"
-                        >Sort Title Z-A</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        href="/post-sorted.html?sort=created&sortOrder=desc"
-                        >Newest Posts</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        class="dropdown-item"
-                        href="/post-sorted.html?sort=created&sortOrder=asc"
-                        >Oldest Posts</a
-                      >
-                    </li>
-                  </ul>
-                </div>
+                <button type="button" class="btn btn-light shadow mb-3">
+                  Sort by title
+                </button>
+                <button type="button" class="btn btn-light shadow mb-3">
+                  Sort by date
+                </button>
               </div>
             </div>
           </div>
