@@ -22,11 +22,11 @@ export function registerUser() {
     const banner = formData.banner.value;
     const avatar = formData.avatar.value;
     const profile = {
-      name,
-      email,
-      password,
-      banner,
-      avatar,
+      name: name,
+      email: email,
+      password: password,
+      banner: banner,
+      avatar: avatar,
     };
     register(API_REG_URL, profile, method);
   });
