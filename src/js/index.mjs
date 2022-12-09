@@ -9,6 +9,7 @@ import { signout } from "./auth/logout.mjs";
 import { filterTags } from "./filter/filterTags.mjs";
 import { sortPosts } from "./sorter/sortType.mjs";
 import { setupSpecificPost } from "./posts/setupSpecific.mjs";
+import { setupSpecificProfile } from "./profile/getProfiles.mjs";
 
 const path = window.location.pathname;
 console.log(path);
@@ -33,4 +34,6 @@ if (path === "/index.html") {
   loadProfile();
   setupProfile();
   signout();
+} else if (path === "/profile-specific.html") {
+  setupSpecificProfile();
 }
