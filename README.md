@@ -1,13 +1,8 @@
-
-```In Development```
-
-```Developers:```
-
-[Benjamin Løndal](https://github.com/dvergnir) & [Jøran Engelund](https://github.com/JoranEngelund)
-
 # Social Media Application
 
 ![SoMe](https://user-images.githubusercontent.com/56642663/206691346-7e5979df-7693-42b6-9675-590a83a7c264.png)
+
+```In Development```
 
 ## Description
 
@@ -67,8 +62,8 @@ To run the app, run the following commands:
 - In Visual studio code, open the explorer menu on the right side (CTRL + SHIFT + E)
 - Run Live Server by right-clicking on a desired html file (ALT + L -> ALT + O)
 - Open terminal in VSC to run npm commands:
-- - npm i
-- - npm run watch
+- npm i
+- npm run watch
 ```
 
 ## Contact
