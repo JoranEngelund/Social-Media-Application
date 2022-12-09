@@ -1,7 +1,7 @@
 
 ```In Development```
 
-##```Developers:```
+```Developers:```
 
 [Benjamin Løndal](https://github.com/dvergnir) & [Jøran Engelund](https://github.com/JoranEngelund)
 
@@ -18,7 +18,9 @@ SoMe is a Social Media platform where people can meet. It has been developed by 
 - Noroff Social API
 - Login system
 - Create/Read/React/Comment/Update/Delete posts
+- Search on posts
 - Create your own profile
+- Edit profile media
 - Follow/Unfollow other profiles
 
 ## Design Process:
