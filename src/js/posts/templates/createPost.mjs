@@ -105,6 +105,13 @@ export function createPosts(
     editDeleteHtml = "";
   }
 
+  let profileLink = ``;
+  if (name === userName) {
+    profileLink = `<a href="/profile.html?name=${name}">${name}</a>`;
+  } else {
+    profileLink = `<a href="/profile-specific.html?name=${name}">${name}</a>`;
+  }
+
   const convertedDate = new Date(created).toLocaleDateString();
   const postContainer = document.querySelector("#post-container");
   postContainer.innerHTML += `<div class="post card mb-5 shadow">
@@ -116,7 +123,7 @@ export function createPosts(
                     class="card-img-top"
                   />
                   <h3 class="card-title custom-title ms-3 align-self-center">
-                    <a href="/profile-specific.html?name=${name}">${name}</a>
+                    ${profileLink}
                   </h3>
                 </div>
                 <div class="card-body">
