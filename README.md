@@ -12,6 +12,7 @@ SoMe is a Social Media platform where people can meet. It has been developed by 
 - Fully responsive
 - Noroff Social API
 - Login system
+- Register account system
 - Create/Read/React/Comment/Update/Delete posts
 - Search on posts
 - Create your own profile
