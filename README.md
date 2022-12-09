@@ -67,8 +67,9 @@ To run the app, run the following commands:
 - In Visual studio code, open the explorer menu on the right side (CTRL + SHIFT + E)
 - Run Live Server by right-clicking on a desired html file (ALT + L -> ALT + O)
 - Open terminal in VSC to run npm commands:
-- - ```npm i ```
-- - ```npm run watch ```
+- - npm i
+- - npm run watch
+```
 
 ## Contact
 
