@@ -6,7 +6,7 @@
  * @param {*} banner
  * @param {*} followers
  * @param {*} following
- * * ```js
+ * ```js
  * // call the function and pass in the arguments you want to use
  * createProfile(name, avatar, email, banner, followers, following)
  * ```
@@ -24,8 +24,16 @@ export function createProfile(
   const followerHtml = document.querySelector(".followers");
   const followingHtml = document.querySelector(".following");
 
+  let userAvatar = avatar;
+
+  if (userAvatar === null || userAvatar === "") {
+    userAvatar = "/assets/images/profile-image.png";
+  } else {
+    userAvatar = avatar;
+  }
+
   profileInfo.innerHTML = `<img
-    src="${avatar}"
+    src="${userAvatar}"
     alt="profile-picture of user"
     class="card-img-top"
     />
@@ -39,9 +47,9 @@ export function createProfile(
     } else {
       followerImage = followerAvatar;
     }
-    followerHtml.innerHTML += `<a href="#">
+    followerHtml.innerHTML += `<a href="profile-specific.html?name=${followerName}">
                     <img
-                      src="${followerAvatar}"
+                      src="${followerImage}"
                       alt="profile-picture of user"
                       class="card-img-top m-1"
                       title=${followerName}
@@ -52,17 +60,17 @@ export function createProfile(
   following.forEach(({ name: followingName, avatar: followingAvatar }) => {
     let followingImage = followingAvatar;
     if (followingImage === null || followingImage === "") {
-      followerImage = "/assets/images/profile-image.png";
+      followingImage = "/assets/images/profile-image.png";
     } else {
       followingImage = followingAvatar;
     }
-    followingHtml.innerHTML += `<a href="#">
-                    <img
-                      src="${followingAvatar}"
-                      alt="profile-picture of user"
-                      class="card-img-top m-1"
-                      title=${followingName}
-                    />
-                  </a>`;
+    followingHtml.innerHTML += `<a href="profile-specific.html?name=${followingName}">
+    <img
+      src="${followingImage}"
+      alt="profile-picture of user"
+      class="card-img-top m-1"
+      title=${followingName}
+    />
+  </a>`;
   });
 }
