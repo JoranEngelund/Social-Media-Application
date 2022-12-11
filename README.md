@@ -64,7 +64,7 @@ To run the app, run the following commands:
 - Run Live Server by right-clicking on a desired html file (ALT + L -> ALT + O)
 - Open terminal in VSC to run npm commands:
 - npm i
-- npm run watch
+- npm run build
 ```
 
 ## Contact
