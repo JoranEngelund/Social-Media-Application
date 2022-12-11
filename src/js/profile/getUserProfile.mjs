@@ -7,7 +7,7 @@ import { getPost } from "../handlers/getPost.mjs";
 
 export async function getUserProfile() {
   const user = storage.load("profile").name;
-  const API_USERPROFILE_URL = `https://api.noroff.dev/api/v1/social/profiles/${user}?_followers=true&_following=true&_posts=true`;
+  const API_USERPROFILE_URL = `${API_PROFILE_URL}${user}?_followers=true&_following=true&_posts=true`;
   const profiles = await getMyProfile(API_USERPROFILE_URL);
   renderProfile(profiles);
 }
