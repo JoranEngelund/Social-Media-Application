@@ -5,6 +5,7 @@ import { getPost } from "../handlers/getPost.mjs";
 import { renderProfilePosts } from "../posts/renderProfilePosts.mjs";
 import * as run from "../posts/listeners.mjs";
 import { profileListeners } from "./listeners.mjs";
+import { toggleLoadingIndicator } from "../loader/loadingIndicator.mjs";
 
 /**
  * //Function that sets up profile using getMyProfile() fetch and initializing renderProfile()
@@ -26,6 +27,7 @@ export async function setupProfile() {
   const postURL = `https://api.noroff.dev/api/v1/social/profiles/${user}/posts?_author=true&_reactions=true&_comments=true`;
   const profilePosts = await getPost(postURL);
   renderProfilePosts(profilePosts);
+  toggleLoadingIndicator(profilePosts);
   run.listeners();
   profileListeners();
 }

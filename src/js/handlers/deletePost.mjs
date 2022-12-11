@@ -23,8 +23,15 @@ export async function deletePost(url, method) {
     });
     if (response.ok) {
       window.location.reload();
+    } else if (!response.ok) {
+      throw alert(
+        "Something happened while trying to delete the post, try again"
+      );
     }
   } catch (error) {
     console.log(error);
+    throw alert(
+      "Something happened while trying to delete the post, try again"
+    );
   }
 }
