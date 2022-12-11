@@ -24,8 +24,13 @@ export async function editPost(url, post, method) {
     });
     if (response.ok) {
       window.location.reload();
+    } else if (!response.ok) {
+      throw alert(
+        "Something happened while trying to edit the post, try again"
+      );
     }
   } catch (error) {
     console.log(error);
+    throw alert("Something happened while trying to edit the post, try again");
   }
 }
