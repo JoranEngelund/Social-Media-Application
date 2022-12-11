@@ -45,6 +45,13 @@ export function createPosts(
     } else {
       ownerImage = ownerAvatar;
     }
+    const userName = storage.load("profile").name;
+    let profileLink = ``;
+    if (owner === userName) {
+      profileLink = `<a href="/profile.html?name=${owner}">${owner}</a>`;
+    } else {
+      profileLink = `<a href="/profile-specific.html?name=${owner}">${owner}</a>`;
+    }
     commentsHtml += `<div class="card-text">
                      <div class="d-flex mt-2 ms-2 mb-2">
                   <img
@@ -53,7 +60,7 @@ export function createPosts(
                     class="card-img-top"
                   />
                   <h3 class="card-title custom-title ms-3 align-self-center">
-                    <a href="/profile-specific.html?name=${owner}">${owner}</a>
+                    ${profileLink}
                   </h3>
                 </div>
                       <div class="d-flex flex-row ms-5">
