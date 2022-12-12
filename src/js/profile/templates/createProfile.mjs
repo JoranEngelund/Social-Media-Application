@@ -1,4 +1,5 @@
 import { placeholderImg } from "../../error-messages/onerror.mjs";
+import * as storage from "../../storage/index.mjs";
 
 /**
  * // createProfile function that generates and displays dynamic generated html to render users profile
@@ -41,6 +42,7 @@ export function createProfile(
     />
     </div>
     <h1 class="ms-5 align-self-center profile-name">${name}</h1>`;
+
   followerHtml.innerHTML = "";
   followers.forEach(({ name: followerName, avatar: followerAvatar }) => {
     let followerImage = followerAvatar;
@@ -49,7 +51,16 @@ export function createProfile(
     } else {
       followerImage = followerAvatar;
     }
-    followerHtml.innerHTML += `<a href="profile-specific.html?name=${followerName}">
+
+    const userName = storage.load("profile").name;
+    let profileLink = ``;
+    if (followerName === userName) {
+      profileLink = `<a href="/profile.html?name=${followerName}">`;
+    } else {
+      profileLink = `<a href="/profile-specific.html?name=${followerName}">`;
+    }
+
+    followerHtml.innerHTML += `${profileLink}
                     <img
                       src="${followerImage}"
                       alt="profile-picture of user"
@@ -59,6 +70,7 @@ export function createProfile(
                     />
                   </a>`;
   });
+
   followingHtml.innerHTML = "";
   following.forEach(({ name: followingName, avatar: followingAvatar }) => {
     let followingImage = followingAvatar;
@@ -67,8 +79,16 @@ export function createProfile(
     } else {
       followingImage = followingAvatar;
     }
-    
-    followingHtml.innerHTML += `<a href="#">
+
+    const userName = storage.load("profile").name;
+    let profileLink = ``;
+    if (followingName === userName) {
+      profileLink = `<a href="/profile.html?name=${followingName}">`;
+    } else {
+      profileLink = `<a href="/profile-specific.html?name=${followingName}">`;
+    }
+
+    followingHtml.innerHTML += `${profileLink}
                     <img
                       src="${followingAvatar}"
                       alt="profile-picture of user"
@@ -77,13 +97,5 @@ export function createProfile(
                       title=${followingName}
                     />
                   </a>`;
-    followingHtml.innerHTML += `<a href="profile-specific.html?name=${followingName}">
-    <img
-      src="${followingImage}"
-      alt="profile-picture of user"
-      class="card-img-top m-1"
-      title=${followingName}
-    />
-  </a>`;
   });
 }
