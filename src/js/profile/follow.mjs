@@ -31,7 +31,6 @@ export function hideFollowBtn() {
   const queryString = document.location.search;
   const params = new URLSearchParams(queryString);
   const profileName = params.get("name");
-  console.log(followingName);
   followingName.forEach(({ name: followingUserName }) => {
     if (followingUserName === profileName) {
       followBtn.classList.add("d-none");

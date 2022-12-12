@@ -13,9 +13,5 @@ import * as storage from "../storage/index.mjs";
  */
 export function renderProfile(profile) {
   const { name, avatar, email, banner, followers, following } = profile;
-  const loggedinUser = storage.load("profile").name;
-  if (loggedinUser === name) {
-    storage.save("Following", following);
-  }
   createProfile(name, avatar, email, banner, followers, following);
 }
