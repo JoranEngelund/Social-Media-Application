@@ -4,14 +4,10 @@ import { renderProfile } from "./renderProfile.mjs";
 import { renderProfilePosts } from "../posts/renderProfilePosts.mjs";
 import { getPost } from "../handlers/getPost.mjs";
 
-/**
- * // function that sends get request with authorization token to retrieve a specific post from API server
- * Utilizes URLSearchParams to get the ID from the queryString
- * and then renders and displays post with dynamically generated html
+/** //Function that gets the name-property from queryString and adds it in URL to get the correct profile from the API
+ * then uses the renderProfile() function to display the profile
  * @example
- * ```js
- * displaySpecificPosts()
- * ```
+ * getSpecificProfile();
  */
 export async function getSpecificProfile() {
   const queryString = document.location.search;
@@ -21,7 +17,12 @@ export async function getSpecificProfile() {
   const profile = await getMyProfile(PROFILE_URL);
   renderProfile(profile);
 }
-
+/** Function that gets the name-property from queryString and adds it in URL to get the personal posts from that
+ * profile from the API
+ * then uses the renderProfilePosts() function to display the posts
+ * @example
+ * getSpecificProfilePosts();
+ */
 export async function getSpecificProfilePosts() {
   const queryString = document.location.search;
   const params = new URLSearchParams(queryString);

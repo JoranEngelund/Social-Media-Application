@@ -12,7 +12,6 @@ import * as storage from "../storage/index.mjs";
  * ```
  */
 export async function editProfileMedia(url, profileMedia, method) {
-  console.log(url);
   try {
     const token = storage.load("accessToken");
     const response = await fetch(url, {
