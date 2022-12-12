@@ -22,10 +22,10 @@ export function sendPost() {
     const tags = tagsString.split(",");
     const media = formData.media.value;
     const post = {
-      title: title,
-      body: body,
-      tags: tags,
-      media: media,
+      title,
+      body,
+      tags,
+      media,
     };
     forwardPost(API_SEND_URL, post, method);
   });
