@@ -4,7 +4,6 @@ import * as storage from "../storage/index.mjs";
  * // Async fetch call that sends a PUT request to the API endpoint and follows a profile
  * @param {string} url
  * @example
- * js
  * followUser(url);
  */
 export async function followUser(url) {

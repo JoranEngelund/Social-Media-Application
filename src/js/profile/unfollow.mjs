@@ -6,7 +6,6 @@ import { API_PROFILE_URL } from "../auth/constants.mjs";
  * then uses the followUser() function to send the request to unfollow profile
  * @example
  * //
- * js
  * unFollowProfile();
  */
 export function unfollowProfile() {

@@ -22,7 +22,6 @@ export function editProfileListener() {
       avatar,
       banner,
     };
-    console.log(profileMedia);
     editProfileMedia(API_EDIT_URL, profileMedia, method);
   });
 }

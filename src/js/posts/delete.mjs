@@ -20,7 +20,6 @@ export function deleteListener() {
       const postId = eventData.id;
       const deletePath = `/social/posts/${postId}`;
       const API_DELETE_URL = `${API_BASE_URL}${deletePath}`;
-      console.log(API_DELETE_URL);
       deletePost(API_DELETE_URL, method);
     });
   });

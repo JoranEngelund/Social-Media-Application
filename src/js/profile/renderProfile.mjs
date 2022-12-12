@@ -1,5 +1,4 @@
 import { createProfile } from "./templates/createProfile.mjs";
-import * as storage from "../storage/index.mjs";
 
 /**
  * //Function that destructures profile object and pass in values as arguments in createProfile() template function

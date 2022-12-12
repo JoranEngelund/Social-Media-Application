@@ -8,7 +8,6 @@
  * ```
  */
 export function registrationError(response) {
-  const form = document.querySelector("#reg-form");
   if (!response.ok) {
     const registerCard = document.querySelector("#register-card");
     registerCard.innerHTML = "";
