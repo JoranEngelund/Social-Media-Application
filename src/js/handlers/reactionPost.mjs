@@ -21,8 +21,11 @@ export async function sendReaction(url, method) {
     });
     if (response.ok) {
       window.location.reload();
+    } else if (!response.ok) {
+      throw alert("Your reaction wasn't sent correctly, try again");
     }
   } catch (error) {
     console.log(error);
+    throw alert("Your reaction wasn't sent correctly, try again");
   }
 }

@@ -24,9 +24,12 @@ export async function sendComment(url, comment, method) {
     });
     if (response.ok) {
       window.location.reload();
+    } else if (!response.ok) {
+      throw alert("Your comment wasn't sent correctly, try again");
     }
     console.log(response);
   } catch (error) {
     console.log(error);
+    throw alert("Your comment wasn't sent correctly, try again");
   }
 }

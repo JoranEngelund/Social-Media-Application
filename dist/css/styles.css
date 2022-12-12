@@ -13396,7 +13396,7 @@ footer a,
 }
 
 .card-img-bottom {
-  max-width: 40%;
+  max-width: 100%;
   height: auto;
 }
 
@@ -13427,6 +13427,10 @@ footer a,
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
 }
 
+.reaction-container {
+  flex-flow: wrap;
+}
+
 .tags {
   max-height: 11rem;
   overflow: hidden scroll;
@@ -13440,12 +13444,20 @@ footer a,
   border-width: 0.7em;
   z-index: 2;
 }
+.spinner-border.profile-spinner {
+  right: 50%;
+}
 
 @media only screen and (max-width: 400px) {
   .card-text,
 .card-title {
     max-width: 26rem;
     max-width: 17rem;
+  }
+}
+@media only screen and (max-width: 337px) {
+  .post-components {
+    flex-flow: wrap-reverse;
   }
 }
 
