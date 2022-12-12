@@ -7,11 +7,13 @@
  * filterTemplateTags(tags);
  * ```
  */
-export function filterTemplateTags(tags) {
-  tags.map((tag) => {
-    if (tag) {
-      const filterMenu = document.querySelector(".tags");
-      filterMenu.innerHTML += `<li><a class="dropdown-item" href="/post-filter.html?tag=${tag}">${tag}</a></li>`;
-    }
+export function filterTemplateTags(posts) {
+  posts.forEach(({ tags }) => {
+    tags.map((tag) => {
+      if (tag) {
+        const filterMenu = document.querySelector(".tags");
+        filterMenu.innerHTML += `<li><a class="dropdown-item" href="/post-filter.html?tag=${tag}">${tag}</a></li>`;
+      }
+    });
   });
 }
