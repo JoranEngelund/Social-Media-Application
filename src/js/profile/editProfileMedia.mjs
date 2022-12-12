@@ -4,11 +4,8 @@ import * as storage from "../storage/index.mjs";
 
 /**
  * // function that retrieves edit-post-form,  from a post and sends it into a forEach with a addEventListener, which sends the form data to api server and edit the post selected
- * @example 
- * ```js
- * // Call the function in a scope where it can access .edit-form (form) elements
-    editListener();
- * ```
+ * @example
+ * editProfileListener();
  */
 export function editProfileListener() {
   const user = storage.load("profile").name;

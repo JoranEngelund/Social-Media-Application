@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="home page, share and read other posts in the feed, search on people, posts and contacts on SoMe "
+      content="profile page, share and read other posts in the feed, search on people, posts and contacts on SoMe "
     />
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.svg" />
     <link rel="stylesheet" href="/dist/css/styles.css" />
@@ -58,12 +58,49 @@
     <main>
       <section>
         <div class="container">
-          <div class="row justify-content-center">
-            <div
-              id="profile-container"
-              class="col-12 lg-6 d-flex flex-column justify-content-center align-items-center text-left"
+          <div class="row">
+            <div class="d-flex mt-6 mb-4 profile-info">
+              <img
+                src="/assets/images/profile-image.png"
+                alt="profile-picture of user"
+                class="card-img-top"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <button
+              class="btn btn-primary shadow px-7 mb-2 btn-custom follow-btn"
+              id="follow-btn"
             >
-              <h1 class="custom-label mt-3 mb-3">Post</h1>
+              Follow
+            </button>
+            <button
+              class="btn btn-primary shadow px-7 mb-2 btn-custom follow-btn"
+              id="unfollow-btn"
+            >
+              Unfollow
+            </button>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container">
+          <div class="row">
+            <div class="col xs-12 sm-12 md-6 d-flex flex-column">
+              <div class="card shadow mb-5">
+                <h2 class="card-title mt-3 ms-3 mb-5">Followers</h2>
+                <div class="card-body mb-4 text-center followers"></div>
+              </div>
+              <div class="card shadow mb-5">
+                <h2 class="card-title mt-3 ms-3 mb-5">Following</h2>
+                <div class="card-body mb-4 text-center following"></div>
+              </div>
+            </div>
+            <div
+              class="col xs-12 sm-12 md-6 d-flex flex-column justify-content-center align-items-left text-left"
+            >
+              <h2 class="custom-label mb-3 align-self-left">Wall</h2>
+              <div id="post-container"></div>
             </div>
           </div>
         </div>
@@ -79,5 +116,6 @@
     </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/src/js/index.mjs" type="module"></script>
+    <script src="/src/js/profile/follow.mjs" type="module"></script>
   </body>
 </html>
