@@ -1,4 +1,5 @@
 import * as storage from "../../storage/index.mjs";
+import { placeholderImg } from "../../error-messages/onerror.mjs";
 
 /**
  * // createPosts function that generates and displays dynamic generated html to render posts
@@ -45,6 +46,7 @@ export function createPosts(
     } else {
       ownerImage = ownerAvatar;
     }
+
     const userName = storage.load("profile").name;
     let profileLink = ``;
     if (owner === userName) {
@@ -52,11 +54,13 @@ export function createPosts(
     } else {
       profileLink = `<a href="/profile-specific.html?name=${owner}">${owner}</a>`;
     }
+
     commentsHtml += `<div class="card-text">
                      <div class="d-flex mt-2 ms-2 mb-2">
                   <img
                     src="${ownerImage}"
                     alt="profile-picture of user"
+                    onerror="this.onerror=null;this.src='${placeholderImg}';"
                     class="card-img-top"
                   />
                   <h3 class="card-title custom-title ms-3 align-self-center">
@@ -127,6 +131,7 @@ export function createPosts(
                   <img
                     src="${profileImage}"
                     alt="profile-picture of user"
+                    onerror="this.onerror=null;this.src='${placeholderImg}';"
                     class="card-img-top"
                   />
                   <h3 class="card-title custom-title ms-3 align-self-center">
@@ -210,6 +215,7 @@ export function createPosts(
                           <img
                             src="${userAvatar}"
                             alt="profile-picture of user"
+                            onerror="this.onerror=null;this.src='${placeholderImg}';"
                             class="card-img-top"
                           />
                         </div>
