@@ -1,4 +1,5 @@
 import { createProfile } from "./templates/createProfile.mjs";
+import * as storage from "../storage/index.mjs";
 
 /**
  * //Function that destructures profile object and pass in values as arguments in createProfile() template function
@@ -12,5 +13,6 @@ import { createProfile } from "./templates/createProfile.mjs";
  */
 export function renderProfile(profile) {
   const { name, avatar, email, banner, followers, following } = profile;
+  storage.save("Following", following);
   createProfile(name, avatar, email, banner, followers, following);
 }
