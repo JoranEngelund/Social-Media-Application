@@ -13,5 +13,4 @@ import { createProfile } from "./templates/createProfile.mjs";
 export function renderProfile(profile) {
   const { name, avatar, email, banner, followers, following } = profile;
   createProfile(name, avatar, email, banner, followers, following);
-  const followBtn = document.querySelector(".follow-btn");
 }
