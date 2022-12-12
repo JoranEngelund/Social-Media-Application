@@ -1,6 +1,5 @@
 import * as run from "../posts/listeners.mjs";
 import { profileListeners } from "./listeners.mjs";
-import { renderProfilePosts } from "../posts/renderProfilePosts.mjs";
 import { getSpecificProfile } from "./getSpecificProfile.mjs";
 import { getSpecificProfilePosts } from "./getSpecificProfile.mjs";
 import { getProfilePosts, getUserProfile } from "./getUserProfile.mjs";
@@ -26,6 +25,5 @@ export function setupSpecificProfile() {
 export async function setupProfile() {
   getUserProfile();
   getProfilePosts();
-  run.listeners();
   profileListeners();
 }

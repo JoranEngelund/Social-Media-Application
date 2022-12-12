@@ -5,6 +5,7 @@ import * as storage from "../storage/index.mjs";
 import { API_PROFILE_URL } from "../auth/constants.mjs";
 import { getPost } from "../handlers/getPost.mjs";
 import { toggleLoadingIndicator } from "../loader/loadingIndicator.mjs";
+import * as run from "../posts/listeners.mjs";
 
 /**
  * //Function that gets the name-property from localStorage and adds it in URL to get the correct profile from the API
@@ -31,4 +32,5 @@ export async function getProfilePosts() {
   const profilePosts = await getPost(API_PROFILEPOSTS_URL);
   renderProfilePosts(profilePosts);
   toggleLoadingIndicator(profilePosts);
+  run.listeners();
 }
