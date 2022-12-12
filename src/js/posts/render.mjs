@@ -28,7 +28,6 @@ export function renderPost(posts) {
     }) => {
       const { name, avatar } = author;
       const { comments: commentCount, reactions: reactionCount } = _count;
-      filterTemplateTags(tags);
       createPosts(
         title,
         created,

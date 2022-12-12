@@ -1,3 +1,5 @@
+import { placeholderImg } from "../../error-messages/onerror.mjs";
+
 /**
  * // createProfile function that generates and displays dynamic generated html to render users profile
  * @param {*} name
@@ -52,6 +54,7 @@ export function createProfile(
                       src="${followerImage}"
                       alt="profile-picture of user"
                       class="card-img-top m-1"
+                      onerror="this.onerror=null;this.src='${placeholderImg}';"
                       title=${followerName}
                     />
                   </a>`;
@@ -64,6 +67,16 @@ export function createProfile(
     } else {
       followingImage = followingAvatar;
     }
+    
+    followingHtml.innerHTML += `<a href="#">
+                    <img
+                      src="${followingAvatar}"
+                      alt="profile-picture of user"
+                      class="card-img-top m-1"
+                      onerror="this.onerror=null;this.src='${placeholderImg}';"
+                      title=${followingName}
+                    />
+                  </a>`;
     followingHtml.innerHTML += `<a href="profile-specific.html?name=${followingName}">
     <img
       src="${followingImage}"
