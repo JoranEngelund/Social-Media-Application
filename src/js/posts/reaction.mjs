@@ -20,7 +20,6 @@ export function reactionListener() {
       const postId = reactionData.id;
       const reactionPath = `/social/posts/${postId}/react/${typeOfReaction}`;
       const API_REACTION_URL = `${API_BASE_URL}${reactionPath}`;
-      console.log(API_REACTION_URL);
       sendReaction(API_REACTION_URL, method);
     });
   });
