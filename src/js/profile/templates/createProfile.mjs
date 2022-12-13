@@ -38,6 +38,7 @@ export function createProfile(
   profileInfo.innerHTML = `<img
     src="${userAvatar}"
     alt="profile-picture of user"
+    onerror="this.onerror=null;this.src='${placeholderImg}';"
     class="card-img-top"
     />
     </div>
