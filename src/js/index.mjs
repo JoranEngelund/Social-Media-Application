@@ -8,10 +8,13 @@ import { setupSpecificPost } from "./posts/setupSpecific.mjs";
 import { setupSpecificProfile } from "./profile/setup.mjs";
 import { followProfile } from "./profile/follow.mjs";
 import { unfollowProfile } from "./profile/unfollow.mjs";
+import { loginUser } from "./auth/login.mjs";
 
 const path = window.location.pathname;
 
-if (path === "/registration.html") {
+if (path === "/" || path === "/index.html") {
+  loginUser();
+} else if (path === "/registration.html") {
   registerUser();
 } else if (path === "/home.html") {
   setup();
