@@ -1,10 +1,5 @@
 import * as storage from "../storage/index.mjs";
 import * as check from "../error-messages/allPosts-error.mjs";
-import * as run from "../posts/listeners.mjs";
-import { createPosts } from "../posts/templates/createPost.mjs";
-import { toggleLoadingIndicator } from "../loader/loadingIndicator.mjs";
-import { filterTemplateTags } from "../filter/templates/filter-dropdown.mjs";
-import { setSearchListener } from "../posts/searchPost.mjs";
 
 /**
  * // Async fetch call that sorts the posts based on the URL endpoint with the neccessary sort="typeOfSort" & sortOrder="sortOrder" flags. returns and displays the posts sorted
@@ -26,45 +21,7 @@ export async function sortedPosts(url) {
       },
     });
     check.responseError(response);
-    const posts = await response.json();
-
-    posts.forEach(
-      ({
-        title,
-        created,
-        id,
-        media,
-        updated,
-        body,
-        tags,
-        author,
-        comments,
-        _count,
-        reactions,
-      }) => {
-        const { name, avatar } = author;
-        const { comments: commentCount, reactions: reactionCount } = _count;
-        createPosts(
-          title,
-          created,
-          id,
-          media,
-          updated,
-          body,
-          tags,
-          name,
-          avatar,
-          comments,
-          commentCount,
-          reactionCount,
-          reactions
-        );
-      }
-    );
-    run.listeners();
-    toggleLoadingIndicator(posts);
-    filterTemplateTags(posts);
-    setSearchListener(posts);
+    return await response.json();
   } catch (error) {
     check.allPostsError(error);
   }

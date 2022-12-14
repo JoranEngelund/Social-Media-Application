@@ -1,6 +1,5 @@
 import { getSpecificPost } from "../handlers/getSpecificPost.mjs";
 import { toggleLoadingIndicator } from "../loader/loadingIndicator.mjs";
-
 import { commentListener } from "./comment.mjs";
 import { deleteListener } from "./delete.mjs";
 import { editListener } from "./edit.mjs";
