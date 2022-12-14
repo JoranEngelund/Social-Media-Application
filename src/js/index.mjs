@@ -2,8 +2,8 @@ import { registerUser } from "./auth/registration.mjs";
 import { setup } from "./posts/setup.mjs";
 import { setupProfile } from "./profile/setup.mjs";
 import { signout } from "./auth/logout.mjs";
-import { filterTags } from "./filter/filterTags.mjs";
-import { sortPosts } from "./sorter/sortType.mjs";
+import { setupFilterTags } from "./filter/setupFiltering.mjs";
+import { setupSorting } from "./sorter/setupSorting.mjs";
 import { setupSpecificPost } from "./posts/setupSpecific.mjs";
 import { setupSpecificProfile } from "./profile/setup.mjs";
 import { followProfile } from "./profile/follow.mjs";
@@ -20,10 +20,10 @@ if (path === "/" || path === "/index.html") {
   setup();
   signout();
 } else if (path === "/post-filter.html") {
-  filterTags();
+  setupFilterTags();
   signout();
 } else if (path === "/post-sorted.html") {
-  sortPosts();
+  setupSorting();
   signout();
 } else if (path === "/post-specific.html") {
   setupSpecificPost();
