@@ -9,6 +9,7 @@ import { setupSpecificProfile } from "./profile/setup.mjs";
 import { followProfile } from "./profile/follow.mjs";
 import { unfollowProfile } from "./profile/unfollow.mjs";
 import { loginUser } from "./auth/login.mjs";
+import { checkToken } from "./auth/checkToken.mjs";
 
 const path = window.location.pathname;
 
@@ -19,20 +20,26 @@ if (path === "/" || path === "/index.html") {
 } else if (path === "/home.html") {
   setup();
   signout();
+  checkToken();
 } else if (path === "/post-filter.html") {
   setupFilterTags();
   signout();
+  checkToken();
 } else if (path === "/post-sorted.html") {
   setupSorting();
   signout();
+  checkToken();
 } else if (path === "/post-specific.html") {
   setupSpecificPost();
   signout();
+  checkToken();
 } else if (path === "/profile.html") {
   setupProfile();
   signout();
+  checkToken();
 } else if (path === "/profile-specific.html") {
   setupSpecificProfile();
   followProfile();
   unfollowProfile();
+  checkToken();
 }
