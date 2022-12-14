@@ -18,6 +18,7 @@ SoMe is a Social Media platform where people can meet. It has been developed by 
 - Create your own profile
 - Edit profile media
 - Follow/Unfollow other profiles
+- Sorting/Filter posts
 
 ## Design Process:
 - [Wireframe built with InvisionApp](https://www.invisionapp.com/)
