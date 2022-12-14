@@ -1,4 +1,3 @@
-import * as run from "../posts/listeners.mjs";
 import { profileListeners } from "./listeners.mjs";
 import { getSpecificProfile } from "./getSpecificProfile.mjs";
 import { getSpecificProfilePosts } from "./getSpecificProfile.mjs";
