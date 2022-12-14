@@ -1,4 +1,3 @@
-import { filterTemplateTags } from "../filter/templates/filter-dropdown.mjs";
 import { createPosts } from "./templates/createPost.mjs";
 
 /**
