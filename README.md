@@ -2,8 +2,6 @@
 
 ![SoMe](https://user-images.githubusercontent.com/56642663/206691346-7e5979df-7693-42b6-9675-590a83a7c264.png)
 
-```In Development```
-
 ## Description
 
 SoMe is a Social Media platform where people can meet. It has been developed by [Benjamin Løndal](https://github.com/dvergnir) & [Jøran Engelund](https://github.com/JoranEngelund) as part of the JavaScript 2 Course Assignment at Noroff.
