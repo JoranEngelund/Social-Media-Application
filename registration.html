@@ -10,18 +10,38 @@
     />
     <link rel="icon" type="image/x-icon" href="/assets/images/favicon.svg" />
     <link rel="stylesheet" href="/dist/css/styles.css" />
-    <title>Login | SoMe</title>
+    <title>Register | SoMe</title>
   </head>
   <body class="bg-secondary d-flex flex-column min-vh-100">
     <header>
       <nav class="navbar navbar-expand-md shadow bg-light">
         <div class="container-fluid">
-          <a href="#" class="navbar-brand"
+          <a href="/index.html" class="navbar-brand"
             ><img
               src="/assets/images/SoMe.svg"
               alt="logo of SoMe"
               class="img-logo"
           /></a>
+          <button
+            type="button"
+            class="navbar-toggler"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a href="/index.html" class="nav-link rounded py-1 px-3 mx-2"
+                  >Login</a
+                >
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
@@ -31,13 +51,28 @@
           <div class="row">
             <div class="col-12 d-flex justify-content-center">
               <div class="card shadow">
-                <div class="card-body" id="login-card">
-                  <h1 class="card-title mt-3">Login</h1>
+                <div id="register-card" class="card-body">
+                  <h1 class="card-title mt-3">Register</h1>
                   <form
+                    action="/index.html"
                     method="POST"
-                    id="login-form"
+                    id="reg-form"
                     class="text-start d-flex flex-column align-items-center mt-5"
                   >
+                    <div class="mb-3 mx-6">
+                      <label for="name" class="form-label">Name *</label>
+                      <input
+                        name="name"
+                        type="text"
+                        id="name"
+                        class="form-control"
+                        placeholder="Name"
+                        pattern="^[\w]+$"
+                        maxlength="20"
+                        required
+                        title="Name cannot contain (Æ, Ø, Å), ( - ), ( . )  | Example: firstName_lastName"
+                      />
+                    </div>
                     <div class="mb-3 mx-6">
                       <label for="email" class="form-label">Email *</label>
                       <input
@@ -45,7 +80,7 @@
                         type="email"
                         id="email"
                         class="form-control"
-                        placeholder="Email@Address.com"
+                        placeholder="email.address@noroff.no"
                         pattern="^[\w\-.]+@(stud.)?noroff.no$"
                         required
                         title="Cannot contain (Æ, Ø, Å) | Example: email_address@noroff.no / email-address@stud.noroff.no / email.address@noroff.no"
@@ -65,20 +100,32 @@
                         minlength="8"
                       />
                     </div>
+                    <div class="mb-3 mx-6">
+                      <label for="banner" class="form-label">Banner</label>
+                      <input
+                        type="url"
+                        id="banner"
+                        name="banner"
+                        class="form-control"
+                        placeholder="Banner"
+                      />
+                    </div>
+                    <div class="mb-3 mx-6">
+                      <label for="avatar" class="form-label">Avatar</label>
+                      <input
+                        type="url"
+                        id="avatar"
+                        name="avatar"
+                        class="form-control"
+                        placeholder="Avatar"
+                      />
+                    </div>
                     <button
                       type="submit"
                       class="btn btn-primary mt-4 mb-3 px-8 shadow text-uppercase btn-login"
                     >
-                      login
+                      register
                     </button>
-                    <div class="card-text mb-5">
-                      Not registered?
-                      <a
-                        class="text-decoration-underline"
-                        href="registration.html"
-                        >Create an account</a
-                      >
-                    </div>
                   </form>
                 </div>
               </div>

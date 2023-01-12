@@ -53,30 +53,36 @@
                 >
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input
-                type="search"
-                class="form-control search-bar ps-4 navbar-dark"
-                placeholder="Search"
-                aria-label="search"
-              />
-            </form>
           </div>
         </div>
       </nav>
     </header>
     <main>
       <section>
+        <div
+          class="spinner-border text-primary toggleLoadingIndicator profile-spinner"
+          role="status"
+        >
+          <span class="visually-hidden">Loading...</span>
+        </div>
         <div class="container">
           <div class="row">
-            <div class="d-flex mt-6 mb-4">
+            <div class="d-flex mt-6 mb-4 profile-info">
               <img
                 src="/assets/images/profile-image.png"
                 alt="profile-picture of user"
                 class="card-img-top"
               />
-              <h1 class="ms-5 align-self-center">Casey Reeves</h1>
             </div>
+          </div>
+          <div class="mb-3">
+            <button
+              data-bs-toggle="modal"
+              data-bs-target="#updateProfileModal"
+              class="btn btn-light shadow me-1 px-4 mb-2"
+            >
+              Edit Profile
+            </button>
           </div>
         </div>
       </section>
@@ -85,120 +91,62 @@
           <div class="row">
             <div class="col xs-12 sm-12 md-6 d-flex flex-column">
               <div class="card shadow mb-5">
-                <h2 class="card-title mt-3 ms-3 mb-5">About</h2>
-                <div class="card-body me-10 mb-4">
-                  <p class="card-text">Lives in Bergen, Norway</p>
-                  <p class="card-text">Educated at Noroff</p>
-                  <p class="card-text">Works at MyBergen</p>
-                  <p class="card-text">Born in 26.10.1993</p>
-                </div>
+                <h2 class="card-title mt-3 ms-3 mb-5">Followers</h2>
+                <div class="card-body mb-4 text-center followers"></div>
               </div>
               <div class="card shadow mb-5">
-                <h2 class="card-title mt-3 ms-3 mb-5">Contacts</h2>
-                <div class="card-body mb-4 text-center">
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-bottom m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-bottom m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-bottom m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-bottom m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-bottom m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-bottom m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-bottom m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-bottom m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-bottom m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-bottom m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-bottom m-1"
-                    />
-                  </a>
-                  <a href="#">
-                    <img
-                      src="/assets/images/profile-image.png"
-                      alt="profile-picture of user"
-                      class="card-img-bottom m-1"
-                    />
-                  </a>
-                </div>
+                <h2 class="card-title mt-3 ms-3 mb-5">Following</h2>
+                <div class="card-body mb-4 text-center following"></div>
               </div>
             </div>
             <div
               class="col xs-12 sm-12 md-6 d-flex flex-column justify-content-center align-items-left text-left"
             >
-              <form action="#">
+              <form method="POST" id="send-post">
                 <div class="mb-3">
                   <label for="post" class="form-label text-left custom-label"
-                    >Share something with Casey Reeves</label
+                    >Share something</label
                   >
                   <div>
+                    <div class="mb-3 mt-4">
+                      <label for="title" class="form-label">Title *</label>
+                      <textarea
+                        name="title"
+                        id="title"
+                        class="form-control post-input shadow"
+                        placeholder="Title"
+                        maxlength="280"
+                        required
+                      ></textarea>
+                    </div>
+                    <label for="post" class="form-label">Body</label>
                     <textarea
+                      name="body"
                       id="post"
-                      class="form-control post-input shadow"
+                      class="form-control post-input shadow mb-3"
                       placeholder="What do you want to share?"
-                      required
-                      minlength="2"
                     ></textarea>
+                    <div class="mb-3">
+                      <label for="tags" class="form-label">Tags</label>
+                      <input
+                        name="tags"
+                        type="text"
+                        id="tags"
+                        class="form-control post-input shadow"
+                        placeholder="First tag, second tag, ..."
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="media" class="form-label">Media</label>
+                      <input
+                        name="media"
+                        type="url"
+                        id="media"
+                        class="form-control post-input shadow"
+                        placeholder="Media must be a URL"
+                        title="media must be a fully formed URL that links to a live and publicly accessible image."
+                      />
+                    </div>
                     <button
                       type="submit"
                       class="btn btn-primary mt-4 mb-3 px-10 text-center btn-custom shadow"
@@ -209,63 +157,71 @@
                 </div>
               </form>
               <h2 class="custom-label mt-3 mb-3 align-self-left">Wall</h2>
-              <div class="card mb-5 shadow">
-                <div class="d-flex ms-2 mt-3 mb-4">
-                  <img
-                    src="/assets/images/profile-image.png"
-                    alt="profile-picture of user"
-                    class="card-img-top"
-                  />
-                  <h3 class="card-title custom-title ms-3 align-self-center">
-                    Michael Quinn
-                  </h3>
-                </div>
-                <div class="card-body">
-                  <p class="card-text mb-4">
-                    But I must explain to you how all this mistaken idea of
-                    denouncing pleasure and praising pain was born and I will
-                    give you a complete account of the system, and expound the
-                    actual teachings of the great explorer of the truth, the
-                    master-builder of human happiness. No one rejects, dislikes,
-                    or avoids pleasure itself, because it is pleasure, but
-                    because those who do not know how to pursue pleasure
-                    rationally encounter consequences that are extremely
-                    painful.
-                  </p>
-                  <div class="d-flex gap-3 text-decoration-none mb-0">
-                    <p class="card-text custom-text"><a href="#">Like</a></p>
-                    <p class="card-text custom-text"><a href="#">Comment</a></p>
-                  </div>
-                </div>
+              <div id="post-container"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="updateProfile">
+        <div
+          class="modal fade"
+          id="updateProfileModal"
+          tabindex="-1"
+          aria-labelledby="updateProfileModal"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content bg-secondary">
+              <div class="d-flex mx-3 mt-3 d-flex justify-content-end">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
               </div>
-              <div class="card mb-5 shadow">
-                <div class="d-flex ms-2 mt-3 mb-4">
-                  <img
-                    src="/assets/images/profile-image.png"
-                    alt="profile-picture of user"
-                    class="card-img-top"
-                  />
-                  <h3 class="card-title custom-title ms-3 align-self-center">
-                    Casey Reeves
-                  </h3>
-                </div>
-                <div class="card-body">
-                  <p class="card-text mb-4">
-                    But I must explain to you how all this mistaken idea of
-                    denouncing pleasure and praising pain was born and I will
-                    give you a complete account of the system, and expound the
-                    actual teachings of the great explorer of the truth, the
-                    master-builder of human happiness. No one rejects, dislikes,
-                    or avoids pleasure itself, because it is pleasure, but
-                    because those who do not know how to pursue pleasure
-                    rationally encounter consequences that are extremely
-                    painful.
-                  </p>
-                  <div class="d-flex gap-3 text-decoration-none mb-0">
-                    <p class="card-text custom-text"><a href="#">Like</a></p>
-                    <p class="card-text custom-text"><a href="#">Comment</a></p>
+              <div class="modal-body d-flex justify-content-center">
+                <form id="update-profile-media">
+                  <div class="mb-3">
+                    <h2 class="form-label text-left custom-label mb-5">
+                      Update Profile Media
+                    </h2>
+                    <div>
+                      <div class="mb-3">
+                        <label for="update-media" class="form-label"
+                          >Avatar</label
+                        >
+                        <input
+                          name="avatar"
+                          type="url"
+                          id="update-avatar"
+                          class="form-control post-input shadow"
+                          placeholder="Avatar must be a URL"
+                          title="Avatar must be a fully formed URL that links to a live and publicly accessible image."
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="update-media" class="form-label"
+                          >Banner</label
+                        >
+                        <input
+                          name="banner"
+                          type="url"
+                          id="update-banner"
+                          class="form-control post-input shadow"
+                          placeholder="Banner must be a URL"
+                          title="banner must be a fully formed URL that links to a live and publicly accessible image."
+                        />
+                      </div>
+                    </div>
                   </div>
-                </div>
+                  <button
+                    type="submit"
+                    class="btn btn-primary mt-4 mb-3 mx-3 px-6 text-center btn-custom shadow"
+                  >
+                    Save changes
+                  </button>
+                </form>
               </div>
             </div>
           </div>
@@ -281,5 +237,6 @@
       >
     </footer>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/src/js/index.mjs" type="module"></script>
   </body>
 </html>
